@@ -101,44 +101,46 @@ public class ChuyenSoThanhChu {
     }
 
     public static String Change(int number) {
-        String strhun = "";
+        String strhundreds = "";
         if (number < 10 && number >= 0) {
             switch (number) {
                 case 0:
-                    strhun = "";
+                    strhundreds = "";
                     break;
                 case 1:
-                    strhun = " one";
+                    strhundreds = " one";
                     break;
                 case 2:
-                    strhun = "two";
+                    strhundreds = "two";
                     break;
                 case 3:
-                    strhun = "thir";
+                    strhundreds = "thir";
                     break;
                 case 4:
-                    strhun = "four";
+                    strhundreds = "four";
                     break;
                 case 5:
-                    strhun = "five";
+                    strhundreds = "five";
                     break;
                 case 6:
-                    strhun = "six";
+                    strhundreds = "six";
                     break;
                 case 7:
-                    strhun = "seven";
+                    strhundreds = "seven";
                     break;
                 case 8:
-                    strhun = "eight";
+                    strhundreds = "eight";
                     break;
                 case 9:
-                    strhun = "nine";
+                    strhundreds = "nine";
                     break;
             }
         }
-        return strhun;
+        return strhundreds;
     }
 }
+
+
 
 
 
