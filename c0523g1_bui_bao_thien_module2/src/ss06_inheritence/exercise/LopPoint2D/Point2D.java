@@ -1,4 +1,7 @@
 package ss06_inheritence.exercise.LopPoint2D;
+
+import java.util.ArrayList;
+
 public class Point2D {
     private float x;
     private float y;
@@ -17,7 +20,10 @@ public class Point2D {
         return y;
     }
     public float[] getXY(){
-        return new float[] {x,y};
+        float data[] = new float[2];
+        data[0] = x;
+        data[1] = y;
+        return data;
     }
     public void setX(float x) {
         this.x = x;

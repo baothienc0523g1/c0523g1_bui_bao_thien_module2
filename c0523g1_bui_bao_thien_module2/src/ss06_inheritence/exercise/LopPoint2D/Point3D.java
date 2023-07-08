@@ -23,7 +23,11 @@ public class Point3D extends Point2D {
         this.z = z;
     }
     public float[] getXYZ() {
-        return new float[] {x,y,z};
+        float data[] = new float[3];
+        data[0] = x;
+        data[1] = y;
+        data[2] = z;
+        return data;
     }
 
     @Override
@@ -39,5 +43,6 @@ public class Point3D extends Point2D {
         System.out.println(point3D.getX());
         point3D.setX(5555);
         System.out.println(point3D.getX());
+
     }
 }
