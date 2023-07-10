@@ -11,14 +11,12 @@ public class Fan {
 
     public Fan() {
     }
-
     public Fan(int speed, String color, double radius, boolean status) {
         this.speed = speed;
         this.color = color;
         this.radius = radius;
         this.status = status;
     }
-
     public int getSpeed() {
         return this.speed = speed;
     }
@@ -32,7 +30,6 @@ public class Fan {
             return speed = fast;
         }
     }
-
     public boolean setStatus(boolean status) {
         return this.status = status;
     }
@@ -47,6 +44,7 @@ public class Fan {
 
     public String toString() {
         if (this.status == true) {
+
             return "This fan is on, speed is " + getSpeed() + ", color is : " + getColor() + ", radius is: " + getRadius();
         } else {
             return "This fan is off!";
@@ -68,5 +66,6 @@ public class Fan {
         fan2.setSpeed(3);
         System.out.println("");
         System.out.println(fan2.toString());
+        System.out.println(fan2.getColor());
     }
 }

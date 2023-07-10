@@ -14,7 +14,7 @@ public class Circle extends Shape {
         super(color, filled);
         this.radius = radius;
     }
-    public double getRadius(double radius) {
+    public double getRadius() {
         return this.radius;
     }
     public void setRadius(double radius) {

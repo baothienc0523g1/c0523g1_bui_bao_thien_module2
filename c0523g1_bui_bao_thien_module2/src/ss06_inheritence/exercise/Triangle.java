@@ -4,6 +4,8 @@ import ss06_inheritence.practice.Shape;
 
 import java.util.Scanner;
 
+// bai nay em chua hoan thanh
+
 public class Triangle extends Shape {
     protected static boolean flag;
     private double side1;
@@ -25,8 +27,6 @@ public class Triangle extends Shape {
             this.side2 = s2;
             this.side3 = s3;
             this.color = "blue";
-        } else {
-            flag = false;
         }
     }
     public Triangle(double s1, double s2, double s3, String color) {
