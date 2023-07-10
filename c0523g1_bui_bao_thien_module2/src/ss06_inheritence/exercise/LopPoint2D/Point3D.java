@@ -5,6 +5,8 @@ public class Point3D extends Point2D {
     private float y;
     private float z;
     public Point3D(){
+        this.x = 0;
+        this.y = 0;
         this.z = 0;
     }
     public Point3D(float x, float y, float z) {

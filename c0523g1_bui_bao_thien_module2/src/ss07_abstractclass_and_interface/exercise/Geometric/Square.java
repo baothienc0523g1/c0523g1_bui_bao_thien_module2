@@ -2,7 +2,7 @@ package ss07_abstractclass_and_interface.exercise.Geometric;
 
 import ss07_abstractclass_and_interface.exercise.Colorable.Colorable;
 
-public class Square extends Rectangle implements Colorable {
+public class Square extends Rectangle implements Colorable, Resizeable {
     private double side;
     public Square() {
         this.side = 1.0;
@@ -31,7 +31,9 @@ public class Square extends Rectangle implements Colorable {
                 " là lớp con của " +
                 super.toString();
     }
-
+    public void resizeable(double percent) {
+        setSide(this.side += this.side * percent);
+    }
     @Override
     public void howToColor() {
         System.out.println("Color all your side");

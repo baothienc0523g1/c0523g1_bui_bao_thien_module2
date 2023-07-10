@@ -34,6 +34,6 @@ public class Circle extends Shape {
                 + super.toString();
     }
     public void resizeable(double percent) {
-        this.radius += percent;
+        setRadius(this.radius += percent);
     }
 }
