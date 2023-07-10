@@ -1,6 +1,6 @@
 package ss07_abstractclass_and_interface.exercise.Geometric;
 
-public class Shape implements Resizeable {
+public abstract class Shape implements Resizeable {
     private String color;
     private boolean filled;
     public Shape() {
