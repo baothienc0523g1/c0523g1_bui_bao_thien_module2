@@ -1,10 +1,10 @@
 package ss4_oop.exercise;
 
 public class Fan {
-    static final int low = 1;
-    static final int medium = 2;
-    static final int fast = 3;
-    int speed = low;
+    static final int LOW = 1;
+    static final int MEDIUM = 2;
+    static final int FAST = 3;
+    int speed = LOW;
     double radius = 5;
     String color = "blue";
     boolean status = false;
@@ -23,11 +23,11 @@ public class Fan {
 
     public int setSpeed(int speed) {
         if (speed == 2) {
-            return this.speed = medium;
+            return this.speed = MEDIUM;
         } else if (speed == 1) {
-            return this.speed = low;
+            return this.speed = LOW;
         } else {
-            return speed = fast;
+            return speed = FAST;
         }
     }
     public boolean setStatus(boolean status) {
