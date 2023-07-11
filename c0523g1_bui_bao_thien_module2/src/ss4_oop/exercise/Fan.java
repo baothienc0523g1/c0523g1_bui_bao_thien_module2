@@ -52,8 +52,8 @@ public class Fan {
     }
 
     public static void main(String[] args) {
-        Fan fan1 = new Fan(fast, "yellow", 10, true);
-        Fan fan2 = new Fan(medium, "blue", 5, false);
+        Fan fan1 = new Fan(FAST, "yellow", 10, true);
+        Fan fan2 = new Fan(MEDIUM, "blue", 5, false);
         System.out.println("Before");
         System.out.println(fan1.toString());
         System.out.println(fan2.toString());
