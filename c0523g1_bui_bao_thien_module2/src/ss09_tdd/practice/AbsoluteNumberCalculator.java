@@ -1,4 +1,4 @@
-package ss09_tdd.practice.absolute_number_calculator;
+package ss09_tdd.practice;
 
 public class AbsoluteNumberCalculator {
     public static int findAbsolute(int number) {

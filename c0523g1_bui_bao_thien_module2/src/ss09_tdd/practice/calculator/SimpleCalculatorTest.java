@@ -1,8 +1,8 @@
-package ss09_tdd.practice;
+package ss09_tdd.practice.calculator;
 
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
-import ss09_tdd.practice.SimpleCalculator;
+import ss09_tdd.practice.calculator.SimpleCalculator;
 
 
 import static org.junit.jupiter.api.Assertions.*;

@@ -1,4 +1,4 @@
-package ss09_tdd.practice;
+package ss09_tdd.practice.calculator;
 
 public class SimpleCalculator {
     public static int add(int first, int second){
