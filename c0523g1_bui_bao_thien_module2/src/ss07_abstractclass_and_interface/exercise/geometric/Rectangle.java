@@ -1,4 +1,4 @@
-package ss07_abstractclass_and_interface.exercise.Geometric;
+package ss07_abstractclass_and_interface.exercise.geometric;
 
 public class Rectangle extends Shape {
     private double width;
@@ -47,7 +47,8 @@ public class Rectangle extends Shape {
 
     @Override
     public void resizeable(double percent) {
-        this.width += percent;
-        this.length += percent;
+        double k = this.width / length;
+        this.length = this.length * Math.sqrt(percent + 1);
+        this.width = k * this.length;
     }
 }

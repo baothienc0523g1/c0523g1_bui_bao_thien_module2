@@ -1,6 +1,6 @@
-package ss07_abstractclass_and_interface.exercise.Geometric;
+package ss07_abstractclass_and_interface.exercise.geometric;
 
-import ss07_abstractclass_and_interface.exercise.Colorable.Colorable;
+import ss07_abstractclass_and_interface.exercise.colorable.Colorable;
 
 public class Square extends Rectangle implements Colorable, Resizeable {
     private double side;
@@ -32,7 +32,7 @@ public class Square extends Rectangle implements Colorable, Resizeable {
                 super.toString();
     }
     public void resizeable(double percent) {
-        setSide(this.side += this.side * percent);
+        this.side = this.side * Math.sqrt(percent + 1);
     }
     @Override
     public void howToColor() {

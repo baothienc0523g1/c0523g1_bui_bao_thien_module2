@@ -1,4 +1,4 @@
-package ss07_abstractclass_and_interface.exercise.Geometric;
+package ss07_abstractclass_and_interface.exercise.geometric;
 
 public class ResizeableTest {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package ss07_abstractclass_and_interface.exercise.Geometric;
+package ss07_abstractclass_and_interface.exercise.geometric;
 
 
 public class Circle extends Shape {
@@ -34,6 +34,6 @@ public class Circle extends Shape {
                 + super.toString();
     }
     public void resizeable(double percent) {
-        setRadius(this.radius += percent);
+        this.radius = this.radius * Math.sqrt(percent + 1);
     }
 }

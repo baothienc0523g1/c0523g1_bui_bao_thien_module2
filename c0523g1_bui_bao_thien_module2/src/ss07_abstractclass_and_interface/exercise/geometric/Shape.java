@@ -1,4 +1,4 @@
-package ss07_abstractclass_and_interface.exercise.Geometric;
+package ss07_abstractclass_and_interface.exercise.geometric;
 
 public abstract class Shape implements Resizeable {
     private String color;
@@ -29,9 +29,7 @@ public abstract class Shape implements Resizeable {
                 " và " +
                 (isFilled() ? "filled" : "not filled");
     }
-    public void resizeable(double percent) {
-
-    }
+    public abstract void resizeable(double percent);
     public double getArea() {
         return this.getArea();
     }

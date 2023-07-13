@@ -1,9 +1,9 @@
-package ss07_abstractclass_and_interface.exercise.Colorable;
+package ss07_abstractclass_and_interface.exercise.colorable;
 
-import ss07_abstractclass_and_interface.exercise.Geometric.Circle;
-import ss07_abstractclass_and_interface.exercise.Geometric.Rectangle;
-import ss07_abstractclass_and_interface.exercise.Geometric.Shape;
-import ss07_abstractclass_and_interface.exercise.Geometric.Square;
+import ss07_abstractclass_and_interface.exercise.geometric.Circle;
+import ss07_abstractclass_and_interface.exercise.geometric.Rectangle;
+import ss07_abstractclass_and_interface.exercise.geometric.Shape;
+import ss07_abstractclass_and_interface.exercise.geometric.Square;
 
 public class ColorableTest {
     public static void main(String[] args) {
