@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /* bài này sử dụng stack -> FILO */
 public class ArrayBaseStack<E> extends ArrayList implements StackADT {
 
-    private final ArrayList array = new ArrayList<>();
+    private ArrayList array = new ArrayList<>();
     private static int index = 0;
     public ArrayBaseStack() {
     }
