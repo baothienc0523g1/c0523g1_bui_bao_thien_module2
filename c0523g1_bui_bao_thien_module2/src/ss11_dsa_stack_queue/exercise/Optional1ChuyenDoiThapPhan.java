@@ -23,5 +23,7 @@ public class Optional1ChuyenDoiThapPhan extends ArrayList {
 
     public static void main(String[] args) {
         System.out.println(binaryRead(30));
+        System.out.println(binaryRead(100));
+        System.out.println(binaryRead(130));
     }
 }
