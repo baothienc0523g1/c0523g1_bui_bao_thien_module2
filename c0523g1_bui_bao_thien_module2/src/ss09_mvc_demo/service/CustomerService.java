@@ -1,12 +1,12 @@
-package ss09_1_mvc.service;
+package ss09_mvc_demo.service;
 
-import ss09_1_mvc.model.Customer;
-import ss09_1_mvc.repo.CustomerRepository;
-import ss09_1_mvc.repo.ICustomerRepository;
+import ss09_mvc_demo.model.Customer;
+import ss09_mvc_demo.repo.CustomerRepository;
+import ss09_mvc_demo.repo.ICustomerRepository;
 
 import java.util.ArrayList;
 
-public class CustomerService implements ICustomerService {
+public class CustomerService extends Customer implements ICustomerService {
 
     private ICustomerRepository repo = new CustomerRepository();
 
@@ -26,8 +26,8 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public Customer find(String name) {
-        return repo.find(name);
+    public void find(String name) {
+        repo.find(name);
     }
 }
 

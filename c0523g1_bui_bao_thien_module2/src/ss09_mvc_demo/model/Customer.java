@@ -1,4 +1,4 @@
-package ss09_1_mvc.model;
+package ss09_mvc_demo.model;
 /*Customer ở model là bản mẫu để các khu vực chứa dữ liệu như repo hoặc DB dùng bản mẫu này
 tạo thành lớp hoàn chỉnh */
 public class Customer {
@@ -27,7 +27,7 @@ public class Customer {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {

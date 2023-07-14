@@ -1,6 +1,6 @@
-package ss09_1_mvc.service;
+package ss09_mvc_demo.service;
 
-import ss09_1_mvc.model.Customer;
+import ss09_mvc_demo.model.Customer;
 
 import java.util.ArrayList;
 
@@ -9,6 +9,6 @@ public interface ICustomerService {
     ArrayList<Customer> getList();
     void add(Customer customer);
     void remove(int id);
-    Customer find(String name);
+    void find(String name);
 
 }
