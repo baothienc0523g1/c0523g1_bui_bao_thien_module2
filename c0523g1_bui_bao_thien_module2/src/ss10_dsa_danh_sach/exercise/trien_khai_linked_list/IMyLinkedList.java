@@ -4,7 +4,7 @@ public interface IMyLinkedList<E> {
     void add(int index, E element);
     void addFirst(E e);
     void addLast(E e);
-    E remove(int index);
+    E removeAt(int index);
     boolean remove(Object e);
     int size();
     E clone();

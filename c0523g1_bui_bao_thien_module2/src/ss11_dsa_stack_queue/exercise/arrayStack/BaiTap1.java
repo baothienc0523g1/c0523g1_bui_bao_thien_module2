@@ -1,4 +1,4 @@
-package ss11_dsa_stack_queue.exercise;
+package ss11_dsa_stack_queue.exercise.arrayStack;
 
 import ss11_dsa_stack_queue.exercise.arrayStack.ArrayBaseStack;
 

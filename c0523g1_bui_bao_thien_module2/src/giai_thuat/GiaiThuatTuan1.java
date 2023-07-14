@@ -1,4 +1,4 @@
-package GiaiThuat;
+package giai_thuat;
 
 public class GiaiThuatTuan1 {
     public static void main(String[] args) {

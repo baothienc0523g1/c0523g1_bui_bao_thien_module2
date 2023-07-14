@@ -1,6 +1,7 @@
 package ss09_tdd.practice.absolute_number_calculator;
 
 import org.junit.Test;
+import ss09_tdd.practice.AbsoluteNumberCalculator;
 
 import static org.junit.jupiter.api.Assertions.*;
 public class AbsoluteNumberCalculatorTest {
