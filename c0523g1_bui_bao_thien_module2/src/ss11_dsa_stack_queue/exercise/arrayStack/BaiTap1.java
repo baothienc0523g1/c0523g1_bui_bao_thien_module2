@@ -18,7 +18,6 @@ public class BaiTap1 {
 
         System.out.println("Stack truoc khi thuc hien dao nguoc");
         System.out.println(mWord.toString());
-        System.out.println("m size" + mWord.size() + " w size " + wStack.size());
 
         int realSize = mWord.size();
         for (int i = 0; i < realSize; i++) {
@@ -27,7 +26,6 @@ public class BaiTap1 {
 
         System.out.println("-----");
         System.out.println("Stack sau khi thuc hien dao nguoc");
-        System.out.println(mWord.toString());
-        System.out.println("m size" + mWord.size() + " w size " + wStack.size());
+        System.out.println(wStack.toString());
     }
 }
