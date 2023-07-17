@@ -16,27 +16,33 @@ public class Optional3KiemTraDauNgoac {
      * cuối cùng return bStack.isEmpty */
     public static boolean syntaxCheck(String string) {
         String result = "";
+        Stack<Character> aStack = new Stack<Character>();
         Stack<Character> bStack = new Stack<Character>();
 
         for (int i = 0; i < string.length(); i++) {
             char temp = string.charAt(i);
             if (temp == '{' || temp == '(' || temp == '[') {
+                aStack.push(temp);
+            } else if (temp == '}' || temp == ')' || temp == ']') {
                 bStack.push(temp);
             }
         }
-        for (int j = 0; j < string.length(); j++) {
-            char temp2 = string.charAt(j);
-            if (bStack.isEmpty())
-                return false;
-            else if (temp2 == '}' && bStack.pop() != '{')
-                return false;
-            else if (temp2 == ')' && bStack.pop() != '(')
-                return false;
-            else if (temp2 == ']' && bStack.pop() != '[')
-                return false;
+        if (aStack.size() == bStack.size()) {
+            for (int j = 0; j < string.length(); j++) {
+                char temp2 = string.charAt(j);
+                if (aStack.isEmpty())
+                    return false;
+                else if (temp2 == '}' && aStack.pop() != '{')
+                    return false;
+                else if (temp2 == ')' && aStack.pop() != '(')
+                    return false;
+                else if (temp2 == ']' && aStack.pop() != '[')
+                    return false;
+            }
+        } else {
+            return false;
         }
-
-        return bStack.isEmpty();
+        return aStack.isEmpty();
     }
 
 

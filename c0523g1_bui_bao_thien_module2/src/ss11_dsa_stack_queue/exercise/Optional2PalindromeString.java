@@ -24,6 +24,7 @@ public final class Optional2PalindromeString {
                 count++;
         }
 
+
         String correct = "This is a palindrome string";
         String incorrect = "This is NOT a palindrome string";
         result += (count == halfLength) ? correct : incorrect;
@@ -34,9 +35,11 @@ public final class Optional2PalindromeString {
         String test1 = "abccba  ";
         String test2 = "Able was I ere I saw Elba  ";
         String test3 = "abccba aaa  ";
+        String test4 = "aaaaaa  ";
 
         checkPalindrome(test1);
         checkPalindrome(test2);
         checkPalindrome(test3);
+        checkPalindrome(test4);
     }
 }
