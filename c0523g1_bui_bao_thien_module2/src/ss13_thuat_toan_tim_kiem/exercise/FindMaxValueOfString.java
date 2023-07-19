@@ -1,5 +1,6 @@
 package ss13_thuat_toan_tim_kiem.exercise;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -8,25 +9,29 @@ public class FindMaxValueOfString {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter your string");
         String string = input.nextLine();
-
-        LinkedList<Character> max = new LinkedList<>();
+        LinkedList<Character> maxList = new LinkedList<>();
 
         for (int i = 0; i < string.length(); i++) {
-            LinkedList<Character> list = new LinkedList<>();
-            list.add(string.charAt(i));
+            LinkedList<Character> tempList = new LinkedList<>();
+            tempList.add(string.charAt(i));
             for (int j = i + 1; j < string.length(); j++) {
-                if (string.charAt(j) > list.getLast()) {
-                    list.add(string.charAt(j));
+                if (string.charAt(j) > tempList.getLast()) {
+                    tempList.add(string.charAt(j));
                 }
             }
-            if (list.size() > max.size()) {
-                max.clear();
-                max.addAll(list);
+            if (tempList.size() > maxList.size()) {
+                maxList.clear();
+                maxList.addAll(tempList);
             }
-            list.clear();
+            tempList.clear();
         }
-        for (Character character : max ) {
-            System.out.println(character);
+        for (Character ch : maxList) {
+            System.out.print(ch);
         }
     }
+    /*Độ phức tạp:
+    * line 9->12: 1
+    * line 14 > 27: n (= string.length)
+    * line 28: n (= maxList.length)
+    * -> O(n)*/
 }
