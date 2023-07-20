@@ -7,7 +7,7 @@ import ss12_java_collection_framework.exercise.bai_tap_1.model.Product;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class ProductRepository extends Product implements IProductRepository {
+public class ProductRepository  implements IProductRepository {
     static ArrayList<Product> productList = new ArrayList<>();
 
     static {

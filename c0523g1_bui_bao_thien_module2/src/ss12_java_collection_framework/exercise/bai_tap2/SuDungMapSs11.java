@@ -16,7 +16,6 @@ public class SuDungMapSs11 {
                 myMap.put(key, defaultValue);
             } else {
                 int temp = myMap.get(key) + 1;
-                myMap.remove(key);
                 myMap.put(key, temp);
             }
         }
