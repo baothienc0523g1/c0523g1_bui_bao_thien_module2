@@ -6,9 +6,9 @@ import java.util.Scanner;
 
 public class FindMaxValueOfString {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter your string");
-        String string = input.nextLine();
+//        Scanner input = new Scanner(System.in);
+//        System.out.println("Enter your string");
+        String string = "oWelcome";
         LinkedList<Character> maxList = new LinkedList<>();
 
         for (int i = 0; i < string.length(); i++) {
