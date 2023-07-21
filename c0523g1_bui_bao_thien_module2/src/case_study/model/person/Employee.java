@@ -1,6 +1,6 @@
-package case_study.model;
+package case_study.model.person;
 
-public class Employee {
+public class Employee extends Person {
     private int id;
     private String name;
     private String dayOfBirth;

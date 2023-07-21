@@ -2,6 +2,6 @@ package case_study.repository;
 
 import java.util.List;
 
-public interface IEmployeeRepository<E> {
+public interface IRepository<E> {
     List<E> getList();
 }

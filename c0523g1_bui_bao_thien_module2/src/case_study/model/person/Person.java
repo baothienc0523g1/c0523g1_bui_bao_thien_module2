@@ -1,2 +1,5 @@
-package case_study.model.person;public class Person {
+package case_study.model.person;
+
+public abstract class Person {
+    private int name;
 }

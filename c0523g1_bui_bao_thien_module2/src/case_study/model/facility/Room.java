@@ -1,4 +1,4 @@
-package case_study.model.furama;
+package case_study.model.facility;
 
 public class Room extends Facility {
     private int serviceID;

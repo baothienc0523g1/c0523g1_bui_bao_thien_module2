@@ -1,4 +1,4 @@
-package case_study.service.facility;
+package case_study.service.facility_service;
 
 import case_study.service.IService;
 

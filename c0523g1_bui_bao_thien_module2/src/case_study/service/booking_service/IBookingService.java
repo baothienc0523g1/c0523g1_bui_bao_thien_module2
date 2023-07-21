@@ -1,4 +1,4 @@
-package case_study.service.booking;
+package case_study.service.booking_service;
 
 import case_study.service.IService;
 
