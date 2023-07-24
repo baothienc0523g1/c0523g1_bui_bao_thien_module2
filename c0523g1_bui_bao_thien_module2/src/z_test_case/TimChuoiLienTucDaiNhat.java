@@ -27,7 +27,7 @@ public class TimChuoiLienTucDaiNhat {
     }
 
     public static void main(String[] args) {
-        String a = "bbbbb";
+        String a = "bbbbabcdef";
         System.out.println(lengthOfLongestSubstring(a));;
     }
 }
