@@ -1,3 +1,5 @@
+package z_test_case;
+
 import java.util.LinkedList;
 
 public class TimChuoiLienTucDaiNhat {

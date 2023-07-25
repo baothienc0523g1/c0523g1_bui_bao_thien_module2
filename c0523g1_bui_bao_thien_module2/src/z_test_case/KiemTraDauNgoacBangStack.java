@@ -1,3 +1,5 @@
+package z_test_case;
+
 import java.util.Stack;
 
 public class KiemTraDauNgoacBangStack {

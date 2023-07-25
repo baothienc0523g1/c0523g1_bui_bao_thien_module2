@@ -11,6 +11,11 @@ public class ReadCsvFile {
     public static void main(String[] args) {
         String inputLink = "D:\\GIT - Bai tap\\c0523g1_bui_bao_thien_module2\\src\\ss16_io_text_file\\exercise\\countries.csv";
         display(myCsvRead(inputLink));
+
+        String obj  = "abcdef";
+        int length = obj.length();
+        char c[] = new char[length];
+        obj.getChars(0, length, c, 0);
     }
     public static List<String> myCsvRead(String filePackage) {
         List<String> output = new LinkedList<>();
@@ -23,7 +28,7 @@ public class ReadCsvFile {
             String pointer = "";
             /*đọc file lần lượt*/
             while ((pointer = br.readLine()) != null) {
-                output.add(Arrays.toString(pointer.split(",")));
+                output.add(Arrays.toString(pointer.split(" ")));
             }
             /*thực hiện đọc xong -> đóng file*/
             br.close();
