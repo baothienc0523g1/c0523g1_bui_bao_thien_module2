@@ -1,7 +1,6 @@
 package ss17_io_binary_file_va_serialization.exercise.bai_tap_1.repository;
 
 import ss17_io_binary_file_va_serialization.exercise.bai_tap_1.model.ProductSs17;
-import zzz.model.Product;
 
 import java.util.ArrayList;
 
