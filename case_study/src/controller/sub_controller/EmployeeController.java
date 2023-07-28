@@ -1,11 +1,14 @@
 package controller.sub_controller;
 
 import controller.FuramaController;
+import service.employee.EmployeeService;
+import service.employee.IEmployeeService;
 
 import java.util.Scanner;
 
 public class EmployeeController {
     private static FuramaController furamaController = new FuramaController();
+    private static IEmployeeService employeeService = new EmployeeService();
     public void displayMainMenu() {
         Scanner scanner = new Scanner(System.in);
         do {
@@ -19,6 +22,21 @@ public class EmployeeController {
                 System.out.println("6. Return to main menu");
                 int choice1 = Integer.parseInt(scanner.nextLine());
                 switch (choice1) {
+                    case 1:
+                        employeeService.getList();
+                        break;
+                    case 2:
+                        employeeService.add();
+                        break;
+                    case 3:
+                        employeeService.edit();
+                        break;
+                    case 4:
+                        employeeService.delete();
+                        break;
+                    case 5:
+                        employeeService.searchByName();
+                        break;
                     case 6:
                         furamaController.display();
                         break;

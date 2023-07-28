@@ -1,2 +1,8 @@
-package service;public interface IService {
+package service;
+
+public interface IService {
+    void getList();
+
+    void add();
+
 }
