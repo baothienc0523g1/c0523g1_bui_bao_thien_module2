@@ -7,7 +7,9 @@ import repository.customer.ICustomerRepository;
 import utilities.MyLocalDateRegex;
 import utilities.MyRegex;
 
+import java.time.DateTimeException;
 import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -20,7 +22,8 @@ public class CustomerService extends MyRegex implements ICustomerService {
 
     private boolean idCheck(String id) {
         boolean flag = true;
-        for (Customer c : customerRepository.getList()) {
+        List<Customer> temp = customerRepository.getList();
+        for (Customer c : temp) {
             if (c.getId().equals(id)) {
                 flag = false;
                 break;
@@ -47,6 +50,7 @@ public class CustomerService extends MyRegex implements ICustomerService {
                 System.out.println("ID must be KH-YYYY, with Y is a number");
             }
         } while (!myRegex(id, CUSTOMER_ID));
+
         if (idCheck(id)) {
             do {
                 System.out.println("New customer name");
@@ -61,7 +65,13 @@ public class CustomerService extends MyRegex implements ICustomerService {
                 System.out.println("New customer birthday (YYYY-MM-DD)");
                 LocalDate birthDay = null;
                 do {
-                    birthDay = LocalDate.parse(scanner.nextLine());
+                    try {
+                        birthDay = LocalDate.parse(scanner.nextLine());
+                    } catch (DateTimeParseException e) {
+                        System.out.println("Wrong format of day");
+                    } catch (DateTimeException e) {
+                        System.out.println("Wrong format of day");
+                    }
                     if (!myLocalDateRegex.myDateRegex(birthDay) || LocalDate.now().compareTo(birthDay) < 18) {
                         System.out.println("Syntax of birthday is: YYYY-MM-DD, or Customer must over 18 years old");
                     }
@@ -182,13 +192,19 @@ public class CustomerService extends MyRegex implements ICustomerService {
                             break;
                         case 2:
                             System.out.println("Customer new birthday");
-                            LocalDate birthDay;
+                            LocalDate birthDay = null;
                             do {
-                                birthDay = LocalDate.parse(scanner.nextLine());
+                                try {
+                                    birthDay = LocalDate.parse(scanner.nextLine());
+                                } catch (DateTimeParseException e) {
+                                    System.out.println("Wrong format of day");
+                                } catch (DateTimeException e) {
+                                    System.out.println("Wrong format of day");
+                                }
                                 if (!myLocalDateRegex.myDateRegex(birthDay)) {
                                     System.out.println("Customer birthday must be like: YYYY-MM-DD");
                                 } else if (LocalDate.now().compareTo(birthDay) < 18) {
-                                    System.out.println("Customer must be olders than 18 years old");
+                                    System.out.println("Customer must be older than 18 years old");
                                 }
                             } while (!myLocalDateRegex.myDateRegex(birthDay) || LocalDate.now().compareTo(birthDay) < 18);
                             c.setBirthDay(birthDay);
@@ -284,9 +300,15 @@ public class CustomerService extends MyRegex implements ICustomerService {
                             } while (!myRegex(newName, NAME));
 
                             System.out.println("Customer new birthday (YYYY-MM-DD)");
-                            LocalDate newBirthday;
+                            LocalDate newBirthday = null;
                             do {
-                                newBirthday = LocalDate.parse(scanner.nextLine());
+                                try {
+                                    newBirthday = LocalDate.parse(scanner.nextLine());
+                                } catch (DateTimeParseException e) {
+                                    System.out.println("Wrong format of day");
+                                } catch (DateTimeException e) {
+                                    System.out.println("Wrong format of day");
+                                }
                                 if (!myLocalDateRegex.myDateRegex(newBirthday) || LocalDate.now().compareTo(newBirthday) < 18) {
                                     System.out.println("Syntax of birthday is: YYYY-MM-DD, or Customer must over 18 years old");
                                 }

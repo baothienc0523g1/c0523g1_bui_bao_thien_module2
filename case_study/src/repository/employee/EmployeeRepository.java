@@ -39,8 +39,9 @@ public class EmployeeRepository implements IEmployeeRepository{
 
     @Override
     public void edit(String id, Employee employee) {
-        for (Employee e : employeeList) {
-            if (employee.getId().equals(id)) {
+        for (int i = 0; i < employeeList.size(); i++) {
+            Employee e = employeeList.get(i);
+            if (e.getId().equals(id)) {
                 e.setId(employee.getId());
                 e.setName(employee.getName());
                 e.setBirthDay(employee.getBirthDay());
@@ -80,7 +81,8 @@ public class EmployeeRepository implements IEmployeeRepository{
     public List<Employee> searchByName(String name) {
         List<Employee> employees = new ArrayList<>();
         for (Employee e : employeeList) {
-            if (e.getName().toLowerCase().contains(name.toLowerCase())) {
+            String temp = e.getName().toLowerCase();
+            if (temp.contains(name.toLowerCase())) {
                 employees.add(e);
             }
         }

@@ -3,14 +3,13 @@ package model.person;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public abstract class Person implements Serializable {
+public abstract class Person  {
     protected String name;
     protected LocalDate birthDay;
     protected String gender;
     protected String personalId;
     protected String phoneNumber;
     protected String email;
-    private static final long serialVersionUID = -1122;
 
     public Person(String name, LocalDate birthDay, String gender,
                   String personalId, String phoneNumber, String email) {

@@ -4,7 +4,8 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Employee extends Person {
+public class Employee extends Person implements Serializable {
+    private static final long serialVersionUID = -1122;
     private String id;
     private String level;
     private String position;
