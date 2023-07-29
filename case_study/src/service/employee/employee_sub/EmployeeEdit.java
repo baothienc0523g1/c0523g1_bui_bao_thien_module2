@@ -1,4 +1,4 @@
-package service.employee.sub;
+package service.employee.employee_sub;
 
 import controller.sub_controller.EmployeeController;
 import model.person.Employee;
@@ -187,7 +187,7 @@ public class EmployeeEdit extends EmployeeService {
             System.out.println("Cant find employee with id " + id);
         }
     }
-    private void editAll(String id) {
+    public void editAll(String id) {
         for (Employee employee : employeeRepository.getList()) {
             if (employee.getId().equals(id)) {
                 System.out.println("Employee new name");

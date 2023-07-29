@@ -6,8 +6,8 @@ import model.person.Employee;
 import repository.employee.EmployeeRepository;
 import repository.employee.IEmployeeRepository;
 
-import service.employee.sub.EmployeeAdd;
-import service.employee.sub.EmployeeEdit;
+import service.employee.employee_sub.EmployeeAdd;
+import service.employee.employee_sub.EmployeeEdit;
 
 import utilities.MyLocalDateRegex;
 import utilities.MyRegex;
