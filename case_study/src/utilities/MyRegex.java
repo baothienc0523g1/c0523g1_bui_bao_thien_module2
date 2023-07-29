@@ -14,7 +14,7 @@ public class MyRegex {
     public static final String EMPLOY_ID = "^NV-[0-9]{4}$";
     public static final String CUSTOMER_ID = "^KH-[0-9]{4}$";
     public static final String CUSTOMER_TYPE = "^diamond$|^platinum$|^gold$|^silver$|^member&";
-    public static final String ADDRESS = "^.$"; //nang cap phuong thuc kiem tra dia chi
+    public static final String ADDRESS = "^.*?$"; //nang cap phuong thuc kiem tra dia chi
     /**/
     private static Pattern pattern;
     private Matcher matcher;

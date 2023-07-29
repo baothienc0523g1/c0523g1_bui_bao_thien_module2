@@ -1,6 +1,7 @@
 package service.customer.customer_sub;
 
 import model.person.Customer;
+import repository.customer.CustomerRepository;
 import service.customer.CustomerService;
 import utilities.MyLocalDateRegex;
 
@@ -12,6 +13,7 @@ import java.util.Scanner;
 public class CustomerAdd extends CustomerService {
        private static Scanner scanner = new Scanner(System.in);
        private MyLocalDateRegex myLocalDateRegex = new MyLocalDateRegex();
+       private CustomerRepository customerRepository = new CustomerRepository();
    public void add() {
        System.out.println("Enter customer ID");
        String id = "";
@@ -104,6 +106,7 @@ public class CustomerAdd extends CustomerService {
 
                Customer customer = new Customer(name, birthDay, gender,
                        personalId, phoneNumber, email, id, type, address);
+               customerRepository.add(customer);
                System.out.println("Customer with id " + id + " is added");
                break;
            } while (true);

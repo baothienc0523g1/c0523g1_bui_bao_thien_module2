@@ -32,7 +32,6 @@ public class CustomerService extends MyRegex implements ICustomerService {
                 flag = false;
                 break;
             }
-
         }
         return flag;
     }
@@ -42,6 +41,7 @@ public class CustomerService extends MyRegex implements ICustomerService {
         List<Customer> customerList = customerRepository.getList();
         for (Customer c : customerList) {
             System.out.println(c);
+            System.out.println("---");
         }
     }
 

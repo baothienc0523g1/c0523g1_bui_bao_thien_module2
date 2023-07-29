@@ -16,11 +16,13 @@ public class CustomerRepository extends ReadAndWrite implements ICustomerReposit
         List<String> stringList = myReadFromCSV(CUSTOMER_FILE_PATH);
         String[] pointer = null;
 
+
         for (String s : stringList) {
             pointer = s.split(",");
             Customer customer = new Customer(pointer[0], LocalDate.parse(pointer[1]), pointer[2],
                     pointer[3], pointer[4], pointer[5], pointer[6], pointer[7],
                     pointer[8]);
+            customers.add(customer);
         }
         return customers;
     }
