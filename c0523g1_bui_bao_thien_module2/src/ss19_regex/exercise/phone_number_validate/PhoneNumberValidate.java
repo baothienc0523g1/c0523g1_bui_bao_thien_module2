@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class PhoneNumberValidate {
     private static Pattern pattern;
     private Matcher matcher;
-    public static final String PHONE_REGEX = "^[(]+{2}[0-9]+[)]+-[(]+0+{9}[0-9]+[)]$";
+    public static final String PHONE_REGEX = "\\(\\d{2}\\)\\-\\(\\d{10}\\)";
     public PhoneNumberValidate() {
         pattern = Pattern.compile(PHONE_REGEX);
     }

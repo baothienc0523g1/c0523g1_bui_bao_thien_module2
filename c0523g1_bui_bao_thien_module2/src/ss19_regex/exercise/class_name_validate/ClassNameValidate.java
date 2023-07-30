@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class ClassNameValidate {
     private static Pattern pattern;
     private Matcher matcher;
-    public static final String CLASS_NAME_REGEX = "^[C|A|P]+{4}[0-9]+[G|H|I|K]$";
+    public static final String CLASS_NAME_REGEX = "^C|A|P+{4}[0-9]+G|H|I|K$";
     public ClassNameValidate() {
         pattern = Pattern.compile(CLASS_NAME_REGEX);
     }
