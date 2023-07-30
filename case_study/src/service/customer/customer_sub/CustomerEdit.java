@@ -31,7 +31,7 @@ public class CustomerEdit extends CustomerService {
             for (Customer c : customerRepository.getList()) {
                 if (c.getId().equals(id)) {
                     System.out.println("Chose which data field need to edit");
-                    System.out.println("1. Name and ID");
+                    System.out.println("1. Name");
                     System.out.println("2. Birth day");
                     System.out.println("3. Gender");
                     System.out.println("4. Personal ID");
@@ -53,15 +53,7 @@ public class CustomerEdit extends CustomerService {
                                 }
                             } while (!myRegex(name, NAME));
 
-                            String newID = "";
-                            do {
-                                newID = scanner.nextLine();
-                                if (!myRegex(newID, CUSTOMER_ID)) {
-                                    System.out.println("ID must be KH-YYYY, with Y is a number");
-                                }
-                            } while (!myRegex(newID, CUSTOMER_ID));
                             c.setName(name);
-                            c.setId(newID);
                             customerRepository.edit(id, c);
                             System.out.println("Customer with id " + id + " is edited");
                             break;

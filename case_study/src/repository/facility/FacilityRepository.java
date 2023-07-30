@@ -1,10 +1,17 @@
 package repository.facility;
 
 import model.facility.Facility;
+import utilities.ReadAndWrite;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 
-public class FacilityRepository implements IFacilityRepository{
+public class FacilityRepository extends ReadAndWrite implements IFacilityRepository{
+    private String ROOM_PATH = "D:\\GIT - Bai tap\\case_study\\src\\data\\room.csv";
+    private String HOUSE_PATH = "D:\\GIT - Bai tap\\case_study\\src\\data\\house.csv";
+    private String VILLA_PATH = "D:\\GIT - Bai tap\\case_study\\src\\data\\villa.csv";
+
+
     @Override
     public List<String> getList() {
         return null;

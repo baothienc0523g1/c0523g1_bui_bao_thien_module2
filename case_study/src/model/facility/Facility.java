@@ -2,7 +2,7 @@ package model.facility;
 
 import java.io.Serializable;
 
-public abstract class Facility implements Serializable {
+public abstract class Facility implements Serializable, Comparable<Facility> {
     Integer serviceID;
     String serviceName;
     Double availableArea;
@@ -29,6 +29,7 @@ public abstract class Facility implements Serializable {
     abstract void setRentCost(Double rentCost);
 
     abstract Integer getMaxSlot();
+
     abstract void setMaxSlot(Integer maxSlot);
 
     abstract String getRentType();
@@ -46,4 +47,5 @@ public abstract class Facility implements Serializable {
                 ", rentType='" + rentType + '\'' +
                 '}';
     }
+
 }

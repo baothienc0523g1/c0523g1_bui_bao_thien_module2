@@ -18,6 +18,18 @@ public class FalicityController {
               System.out.println("5. Return to main menu");
               int choice3 = Integer.parseInt(scanner.nextLine());
               switch (choice3) {
+                  case 2:
+                      System.out.println("Add new facility");
+                      System.out.println("1. Add new Villa");
+                      System.out.println("2. Add new House");
+                      System.out.println("3. Add new Room");
+                      System.out.println("4. Back to menu");
+                      int choiceCase2 = Integer.parseInt(scanner.nextLine());
+                      switch (choiceCase2) {
+                          case 4:
+                              displayMainMenu();
+                              break;
+                      }
                   case 5:
                       furamaController.display();
                       break;

@@ -61,17 +61,11 @@ public class Customer extends Person implements Serializable {
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "id=" + id +
-                ", type='" + type + '\'' +
-                ", address='" + address + '\'' +
-                ", name='" + name + '\'' +
-                ", birthDay='" + birthDay + '\'' +
-                ", gender='" + gender + '\'' +
-                ", personalId='" + personalId + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return "Customer " + name + ", id: " + id + ", type: " + type
+                + ", address: " + address + ", birthday: " + birthDay
+                + ", gender: " + gender + ", email: " + email
+                + ", personal ID: " + personalId + ", phone number: "
+                + phoneNumber;
     }
 
     @Override

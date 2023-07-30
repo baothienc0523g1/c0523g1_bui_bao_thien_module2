@@ -35,7 +35,7 @@ public class EmployeeAdd extends EmployeeService {
                 do {
                     name = scanner.nextLine();
                     if (!myRegex(name, NAME)) {
-                        System.out.println("Wrong syntax of name, try again bro");
+                        System.out.println("Wrong syntax of name. Name with 2 words and first letter of each word is in upper case");
                     }
                 } while (!myRegex(name, NAME));
 

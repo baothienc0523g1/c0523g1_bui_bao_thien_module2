@@ -33,7 +33,7 @@ public class EmployeeEdit extends EmployeeService {
                 if (employee.getId().equals(id)) {
                     do {
                         System.out.println("With filed you'd like to change");
-                        System.out.println("1. Employee ID & Name");
+                        System.out.println("1. Employee name");
                         System.out.println("2. Salary");
                         System.out.println("3. Birthday");
                         System.out.println("4. Gender");
@@ -46,17 +46,6 @@ public class EmployeeEdit extends EmployeeService {
                         Integer editChoice = Integer.parseInt(scanner.nextLine());
                         switch (editChoice) {
                             case 1:
-                                String idSet = "";
-                                do {
-                                System.out.println("Employee new ID");
-                                    idSet = scanner.nextLine();
-                                    if (!myRegex(idSet, EMPLOY_ID)) {
-                                        System.out.println("ID must be like: NV-YYYY, with Y is a number");
-                                    } else if (!idCheck(idSet)) {
-                                        System.out.println("ID already exist");
-                                    }
-                                } while (!myRegex(idSet, EMPLOY_ID) || !idCheck(idSet));
-
                                 System.out.println("New employee name");
                                 String name = "";
                                 do {
@@ -65,7 +54,6 @@ public class EmployeeEdit extends EmployeeService {
                                         System.out.println("Wrong syntax of name, try again bro");
                                     }
                                 } while (!myRegex(name, NAME));
-                                employee.setId(idSet);
                                 employee.setName(name);
                                 employeeRepository.edit(id, employee);
                                 System.out.println("Employee with ID " + id + " is edited");

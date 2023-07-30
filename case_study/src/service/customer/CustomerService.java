@@ -1,17 +1,18 @@
 package service.customer;
 
 import controller.sub_controller.CustomerController;
+
 import model.person.Customer;
+
 import repository.customer.CustomerRepository;
 import repository.customer.ICustomerRepository;
+
 import service.customer.customer_sub.CustomerAdd;
 import service.customer.customer_sub.CustomerEdit;
+
 import utilities.MyLocalDateRegex;
 import utilities.MyRegex;
 
-import java.time.DateTimeException;
-import java.time.LocalDate;
-import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -41,7 +42,7 @@ public class CustomerService extends MyRegex implements ICustomerService {
         List<Customer> customerList = customerRepository.getList();
         for (Customer c : customerList) {
             System.out.println(c);
-            System.out.println("---");
+            System.out.println("");
         }
     }
 

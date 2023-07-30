@@ -5,16 +5,19 @@ import java.util.regex.Pattern;
 
 public class MyRegex {
     /**/
-    public static final String NAME = "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$";
-    public static final String PERSONAL_ID = "^[0-9]{9,12}$";
-    public static final String PHONE_NUMBER = "^0[0-9]{9}$";
+    public static final String NAME = "^[A-Z][a-z]*\\s[A-Z][a-z]*$";
+    public static final String PERSONAL_ID = "^\\d{9}|\\d{12}$";
+    public static final String PHONE_NUMBER = "^0\\d{9}$";
     public static final String GENDER = "^male$|^female$|^else$";
     public static final String EMAIL = "^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,6})*$";
     public static final String EMPLOY_LEVEL = "^intermediate$|^degree$|^college$|^graduate$";
     public static final String EMPLOY_ID = "^NV-[0-9]{4}$";
     public static final String CUSTOMER_ID = "^KH-[0-9]{4}$";
     public static final String CUSTOMER_TYPE = "^diamond$|^platinum$|^gold$|^silver$|^member&";
-    public static final String ADDRESS = "^.*?$"; //nang cap phuong thuc kiem tra dia chi
+    public static final String ADDRESS = "^.*$"; //nang cap phuong thuc kiem tra dia chi
+    public static final String VILLA_SERVICE_ID = "^SVVL\\-$\\d{4}";
+    public static final String HOUSE_SERVICE_ID = "^SVHO\\-$\\d{4}";
+    public static final String ROOM_SERVICE_ID = "^SVRO\\-$\\d{4}";
     /**/
     private static Pattern pattern;
     private Matcher matcher;

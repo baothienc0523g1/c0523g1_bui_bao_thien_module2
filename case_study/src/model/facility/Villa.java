@@ -1,6 +1,6 @@
 package model.facility;
 
-public class Villa extends Facility{
+public class Villa extends Facility {
     private Integer serviceID;
     private String serviceName;
     private Double availableArea;
@@ -125,5 +125,10 @@ public class Villa extends Facility{
 
     public void setFloors(Integer floors) {
         this.floors = floors;
+    }
+
+    @Override
+    public int compareTo(Facility o) {
+        return this.getServiceID() - o.getServiceID();
     }
 }

@@ -39,6 +39,7 @@ public class EmployeeService extends MyRegex implements IEmployeeService {
         List<Employee> employeeList = employeeRepository.getList();
         for (Employee e : employeeList) {
             System.out.println(e);
+            System.out.println("");
         }
     }
 

@@ -75,16 +75,10 @@ public class Employee extends Person implements Serializable {
 
     @Override
     public String toString() {
-        return "Employee " +
-                "id ='" + id + '\'' +
-                ", level ='" + level + '\'' +
-                ", position ='" + position + '\'' +
-                ", salary =" + salary +
-                ", name ='" + name + '\'' +
-                ", birth day ='" + birthDay + '\'' +
-                ", gender ='" + gender + '\'' +
-                ", personal ID ='" + personalId + '\'' +
-                ", phone number ='" + phoneNumber + '\'' +
-                ", email ='" + email;
+        return "Employee " + name + ", id: " + id + ", level: " + level
+                + ", position: " + position + ", birthday: " + birthDay
+                + ", gender: " + gender + ", email: " + email
+                + ", personal ID: " + personalId + ", phone number: "
+                + phoneNumber + ", salary: " + salary + " $";
     }
 }
