@@ -1,11 +1,13 @@
 package controller.sub_controller;
 
 import controller.FuramaController;
+import service.facility.FacilityService;
 
 import java.util.Scanner;
 
 public class FalicityController {
     private static FuramaController furamaController = new FuramaController();
+    private static FacilityService facilityService = new FacilityService();
     public void displayMainMenu() {
         Scanner scanner = new Scanner(System.in);
         do {
@@ -18,6 +20,9 @@ public class FalicityController {
               System.out.println("5. Return to main menu");
               int choice3 = Integer.parseInt(scanner.nextLine());
               switch (choice3) {
+                  case 1:
+                      facilityService.getList();
+                      break;
                   case 2:
                       System.out.println("Add new facility");
                       System.out.println("1. Add new Villa");
@@ -26,10 +31,16 @@ public class FalicityController {
                       System.out.println("4. Back to menu");
                       int choiceCase2 = Integer.parseInt(scanner.nextLine());
                       switch (choiceCase2) {
-                          case 4:
+                          case 5:
                               displayMainMenu();
                               break;
                       }
+                  case 3:
+                      facilityService.getMaintenanceList();
+                      break;
+                  case 4:
+                      facilityService.delete();
+                      break;
                   case 5:
                       furamaController.display();
                       break;

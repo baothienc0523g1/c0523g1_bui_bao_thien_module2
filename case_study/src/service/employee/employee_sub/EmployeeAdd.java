@@ -8,7 +8,9 @@ import utilities.MyLocalDateRegex;
 
 import java.time.DateTimeException;
 import java.time.LocalDate;
+
 import java.time.format.DateTimeParseException;
+
 import java.util.Scanner;
 
 
@@ -39,9 +41,9 @@ public class EmployeeAdd extends EmployeeService {
                     }
                 } while (!myRegex(name, NAME));
 
-                System.out.println("New employee birthday (YYYY-MM-DD)");
                 LocalDate birthDay = null;
                 do {
+                System.out.println("New employee birthday (YYYY-MM-DD)");
                     try {
                         birthDay = LocalDate.parse(scanner.nextLine());
                     } catch (DateTimeParseException e) {
@@ -50,7 +52,7 @@ public class EmployeeAdd extends EmployeeService {
                         System.out.println("Wrong format of day");
                     }
                     if (!myLocalDateRegex.myDateRegex(birthDay) || LocalDate.now().compareTo(birthDay) < 18) {
-                        System.out.println("Syntax of birthday is: YYYY-MM-DD, or Employee must over 18 years old");
+                        System.out.println("Syntax of birthday is: YYYY-MM-DD or Employee must over 18 years old");
                     }
                 } while (!myLocalDateRegex.myDateRegex(birthDay) || LocalDate.now().compareTo(birthDay) < 18);
 

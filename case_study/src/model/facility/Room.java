@@ -1,35 +1,30 @@
 package model.facility;
 
-public class Room extends Facility  {
-    private Integer serviceID;
-    private String serviceName;
-    private Double availableArea;
-    private Double rentCost;
-    private Integer maxSlot;
-    private String rentType;
+public class Room extends Facility {
+
     private String freeServiceGift;
 
-    public Room() {
-    }
 
-    public Room(Integer serviceID, String serviceName, Double availableArea,
+    public Room(String serviceID, String serviceName, Double availableArea,
                 Double rentCost, Integer maxSlot, String rentType, String freeServiceGift) {
-        this.serviceID = serviceID;
-        this.serviceName = serviceName;
-        this.availableArea = availableArea;
-        this.rentCost = rentCost;
-        this.maxSlot = maxSlot;
-        this.rentType = rentType;
+        super(serviceID, serviceName, availableArea, rentCost, maxSlot, rentType);
         this.freeServiceGift = freeServiceGift;
     }
 
     @Override
-    public Integer getServiceID() {
+    public String toStringForSave() {
+        return this.serviceID + "," + this.serviceName + "," + this.availableArea + ","
+                + this.rentCost + "," + this.maxSlot + "," +
+                this.rentType + "," + this.rentType + "," + this.freeServiceGift;
+    }
+
+    @Override
+    public String getServiceID() {
         return serviceID;
     }
 
     @Override
-    public void setServiceID(Integer serviceID) {
+    public void setServiceID(String serviceID) {
         this.serviceID = serviceID;
     }
 
@@ -93,19 +88,23 @@ public class Room extends Facility  {
 
     @Override
     public String toString() {
-        return "Room{" +
-                "serviceID=" + serviceID +
-                ", serviceName='" + serviceName + '\'' +
-                ", availableArea=" + availableArea +
-                ", rentCost=" + rentCost +
-                ", maxSlot=" + maxSlot +
-                ", rentType='" + rentType + '\'' +
-                ", freeServiceGift='" + freeServiceGift + '\'' +
-                '}';
+        return "Room " +
+                ", service ID: " + serviceID +
+                ", service name: " + serviceName +
+                ", available area: " + availableArea +
+                ", rent cost: " + rentCost +
+                ", max slot: " + maxSlot +
+                ", rent type: " + rentType +
+                ", free service gift " + freeServiceGift;
     }
 
     @Override
     public int compareTo(Facility o) {
-        return this.getServiceID() - o.getServiceID();
+        return (int) (this.getAvailableArea() - o.getAvailableArea());
+    }
+
+    @Override
+    public String getType() {
+        return "Room";
     }
 }

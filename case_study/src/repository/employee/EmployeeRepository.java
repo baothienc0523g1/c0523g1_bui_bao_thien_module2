@@ -78,7 +78,7 @@ public class EmployeeRepository implements IEmployeeRepository{
     }
 
     @Override
-    public List<Employee> searchByName(String name) {
+    public List<Employee> search(String name) {
         List<Employee> employees = new ArrayList<>();
         for (Employee e : employeeList) {
             String temp = e.getName().toLowerCase();

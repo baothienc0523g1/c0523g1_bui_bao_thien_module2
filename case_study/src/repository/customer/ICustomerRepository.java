@@ -5,11 +5,8 @@ import repository.IRepository;
 
 import java.util.List;
 
-public interface ICustomerRepository extends IRepository {
-    @Override
-    List<Customer> getList();
-    void add(Customer customer);
+
+public interface ICustomerRepository extends IRepository<Customer> {
     void edit(String id, Customer customer);
-    void delete(String id);
-    List<Customer> searchByName(String name);
+    List<Customer> search(String name);
 }

@@ -1,38 +1,40 @@
 package model.facility;
 
 public class House extends Facility {
-    private Integer serviceID;
-    private String serviceName;
-    private Double availableArea;
-    private Double rentCost;
-    private Integer maxSlot;
-    private String rentType;
+
     private String roomDescription;
     private Integer floors;
 
-    public House() {
-    }
-
-    public House(Integer serviceID, String serviceName, Double availableArea,
+    public House(String serviceID, String serviceName, Double availableArea,
                  Double rentCost, Integer maxSlot, String rentType,
                  String roomDescription, Integer floors) {
-        this.serviceID = serviceID;
-        this.serviceName = serviceName;
-        this.availableArea = availableArea;
-        this.rentCost = rentCost;
-        this.maxSlot = maxSlot;
-        this.rentType = rentType;
+        super(serviceID, serviceName, availableArea, rentCost, maxSlot, rentType);
         this.roomDescription = roomDescription;
         this.floors = floors;
     }
+    @Override
+    public String toStringForSave() {
+        return this.serviceID + "," + this.serviceName + "," + this.availableArea + "," +
+                this.rentCost + "," + this.maxSlot + "," + this.rentType
+                + this.roomDescription + "," + this.floors;
+    }
 
     @Override
-    public Integer getServiceID() {
+    public int compareTo(Facility o) {
+        return (int) (this.getAvailableArea() - o.getAvailableArea());
+    }
+
+    @Override
+    public String getType() {
+        return "House";
+    }
+
+    public String getServiceID() {
         return serviceID;
     }
 
     @Override
-    public void setServiceID(Integer serviceID) {
+    public void setServiceID(String serviceID) {
         this.serviceID = serviceID;
     }
 
@@ -86,6 +88,7 @@ public class House extends Facility {
         this.rentType = rentType;
     }
 
+
     public String getRoomDescription() {
         return roomDescription;
     }
@@ -104,19 +107,16 @@ public class House extends Facility {
 
     @Override
     public String toString() {
-        return "House{" +
-                "serviceID=" + serviceID +
-                ", serviceName='" + serviceName + '\'' +
-                ", availableArea=" + availableArea +
-                ", rentCost=" + rentCost +
-                ", maxSlot=" + maxSlot +
-                ", rentType='" + rentType + '\'' +
-                ", roomDescription='" + roomDescription + '\'' +
-                ", floors=" + floors +
-                '}';
+        return "House: " +
+                ", service ID: " + serviceID +
+                ", service name: " + serviceName +
+                ", available area: " + availableArea +
+                ", rent cost: " + rentCost +
+                ", max slot: " + maxSlot +
+                ", rent type: " + rentType +
+                ", room description: " + roomDescription +
+                ", floors: " + floors;
     }
-    @Override
-    public int compareTo(Facility o) {
-        return this.getServiceID() - o.getServiceID();
-    }
+
+
 }

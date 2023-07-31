@@ -5,14 +5,19 @@ import model.business.Contract;
 
 import java.util.List;
 
-public class BookingRepository implements IBookingRepository{
+public class BookingRepository implements IBookingRepository {
     @Override
     public void add(Booking booking) {
 
     }
 
     @Override
-    public List<String> getList() {
+    public void delete(String id) {
+
+    }
+
+    @Override
+    public List<Booking> getList() {
         return null;
     }
 

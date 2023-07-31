@@ -43,7 +43,7 @@ public class CustomerRepository extends ReadAndWrite implements ICustomerReposit
     public void edit(String id, Customer customer) {
         for (Customer c : customerList) {
             if (c.getId().equals(id)) {
-                c.setId(customer.getId());
+                c.setId(id);
                 c.setName(customer.getName());
                 c.setBirthDay(customer.getBirthDay());
                 c.setGender(customer.getGender());
@@ -59,13 +59,15 @@ public class CustomerRepository extends ReadAndWrite implements ICustomerReposit
         for (Customer c : customerList) {
             stringList.add(c.getInfoToCSV());
         }
-        myWriteToCSV(stringList, CUSTOMER_FILE_PATH, true);
+        myWriteToCSV(stringList, CUSTOMER_FILE_PATH, false);
     }
 
     @Override
     public void delete(String id) {
-        for (Customer c : customerList) {
-            if (c.getId().equals(id)) {
+        List<Customer> temp = customerList;
+        for (int i = 0; i < temp.size(); i++) {
+            Customer c = temp.get(i);
+            if (c.getId().equals(i)) {
                 customerList.remove(c);
                 break;
             }
@@ -74,14 +76,15 @@ public class CustomerRepository extends ReadAndWrite implements ICustomerReposit
         for (Customer c : customerList) {
             stringList.add(c.getInfoToCSV());
         }
-        myWriteToCSV(stringList, CUSTOMER_FILE_PATH, true);
+        myWriteToCSV(stringList, CUSTOMER_FILE_PATH, false);
     }
 
     @Override
-    public List<Customer> searchByName(String name) {
+    public List<Customer> search(String name) {
         List<Customer> customers = new ArrayList<>();
         for (Customer c : customerList) {
-            if (c.getName().contains(name)) {
+            String temp = c.getName().toLowerCase();
+            if (temp.contains(name.toLowerCase())) {
                 customers.add(c);
             }
         }

@@ -31,8 +31,6 @@ public class Employee extends Person implements Serializable {
                 + "," + this.salary;
     }
 
-    public Employee() {}
-
     public String getId() {
         return id;
     }
@@ -79,6 +77,6 @@ public class Employee extends Person implements Serializable {
                 + ", position: " + position + ", birthday: " + birthDay
                 + ", gender: " + gender + ", email: " + email
                 + ", personal ID: " + personalId + ", phone number: "
-                + phoneNumber + ", salary: " + salary + " $";
+                + phoneNumber + ", salary: $" + salary;
     }
 }

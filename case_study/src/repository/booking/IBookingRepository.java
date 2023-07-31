@@ -6,10 +6,7 @@ import repository.IRepository;
 
 import java.util.List;
 
-public interface IBookingRepository extends IRepository {
-    void add(Booking booking);
-    @Override
-    List<String> getList();
+public interface IBookingRepository extends IRepository<Booking> {
     void createNewContracts(Contract contract);
     List<String> getContractList();
 }

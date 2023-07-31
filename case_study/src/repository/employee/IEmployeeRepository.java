@@ -5,11 +5,8 @@ import repository.IRepository;
 
 import java.util.List;
 
-public interface IEmployeeRepository extends IRepository {
-    @Override
-    List<Employee> getList();
-    void add(Employee employee);
+public interface IEmployeeRepository extends IRepository<Employee> {
+
     void edit(String id, Employee employee);
-    void delete(String id);
-    List<Employee> searchByName(String name);
+    List<Employee> search(String name);
 }

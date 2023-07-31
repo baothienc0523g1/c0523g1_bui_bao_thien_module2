@@ -12,6 +12,7 @@ import service.employee.employee_sub.EmployeeEdit;
 import utilities.MyLocalDateRegex;
 import utilities.MyRegex;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -24,7 +25,9 @@ public class EmployeeService extends MyRegex implements IEmployeeService {
 
     protected boolean idCheck(String id) {
         boolean flag = true;
-        for (int i = 0; i < employeeRepository.getList().size(); i++) {
+        List<Employee> temp = employeeRepository.getList();
+
+        for (int i = 0; i < temp.size(); i++) {
             Employee e = employeeRepository.getList().get(i);
             if (e.getId().equals(id)) {
                 flag = false;
@@ -70,8 +73,8 @@ public class EmployeeService extends MyRegex implements IEmployeeService {
     public void searchByName() {
         System.out.println("Enter employee's name");
         String name = scanner.nextLine();
-        if (employeeRepository.searchByName(name).size() > 0) {
-            System.out.println(employeeRepository.searchByName(name));
+        if (employeeRepository.search(name).size() > 0) {
+            System.out.println(employeeRepository.search(name));
         } else {
             System.out.println("Cant find employee with name " + name);
         }

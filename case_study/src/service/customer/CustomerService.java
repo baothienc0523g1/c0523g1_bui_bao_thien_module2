@@ -74,8 +74,8 @@ public class CustomerService extends MyRegex implements ICustomerService {
     public void searchByName() {
         System.out.println("Enter customer name need to search");
         String name = scanner.nextLine();
-        if (customerRepository.searchByName(name).size() > 0) {
-            System.out.println(customerRepository.searchByName(name));
+        if (customerRepository.search(name).size() > 0) {
+            System.out.println(customerRepository.search(name));
         } else {
             System.out.println("Cant find customer with name " + name);
         }
