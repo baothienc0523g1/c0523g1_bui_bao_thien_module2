@@ -44,6 +44,9 @@ public class FacilityService extends MyRegex implements IFacilityService {
             case 2:
                 addHouse();
                 break;
+            case 3:
+                addRoom();
+                break;
             case 4:
                 falicityController.displayMainMenu();
                 break;
