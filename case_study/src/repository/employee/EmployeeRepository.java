@@ -27,7 +27,7 @@ public class EmployeeRepository implements IEmployeeRepository{
     }
     @Override
     public List<Employee> getList() {
-        return employeeList;
+       return listToEmployee();
     }
 
     @Override

@@ -11,7 +11,13 @@ public abstract class Facility implements Serializable, Comparable<Facility> {
     String rentType;
     private static final long serialVersionUID = -2122;
 
-    protected Facility(String serviceID, String serviceName, Double availableArea, Double rentCost, Integer maxSlot, String rentType) {
+    public Facility(String serviceID, String serviceName, Double availableArea, Double rentCost, Integer maxSlot, String rentType) {
+        this.serviceID = serviceID;
+        this.serviceName = serviceName;
+        this.availableArea = availableArea;
+        this.rentCost = rentCost;
+        this.maxSlot = maxSlot;
+        this.rentType = rentType;
     }
 
     public abstract String getType();

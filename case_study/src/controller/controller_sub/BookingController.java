@@ -1,4 +1,4 @@
-package controller.sub_controller;
+package controller.controller_sub;
 
 import controller.FuramaController;
 

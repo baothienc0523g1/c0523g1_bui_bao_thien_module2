@@ -29,7 +29,7 @@ public class CustomerRepository extends ReadAndWrite implements ICustomerReposit
 
     @Override
     public List<Customer> getList() {
-        return customerList;
+        return listToCustomer();
     }
 
     @Override

@@ -1,6 +1,6 @@
 package service.employee.employee_sub;
 
-import controller.sub_controller.EmployeeController;
+import controller.controller_sub.EmployeeController;
 import model.person.Employee;
 import repository.employee.EmployeeRepository;
 import repository.employee.IEmployeeRepository;

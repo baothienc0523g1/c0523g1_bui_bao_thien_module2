@@ -1,6 +1,6 @@
 package controller;
 
-import controller.sub_controller.*;
+import controller.controller_sub.*;
 
 import java.util.Scanner;
 

@@ -15,9 +15,9 @@ public class MyRegex {
     public static final String CUSTOMER_ID = "^KH-[0-9]{4}$";
     public static final String CUSTOMER_TYPE = "^diamond$|^platinum$|^gold$|^silver$|^member&";
     public static final String ADDRESS = "^.*$"; //nang cap phuong thuc kiem tra dia chi
-    public static final String VILLA_SERVICE_ID = "^SVVL\\-$\\d{4}";
-    public static final String HOUSE_SERVICE_ID = "^SVHO\\-$\\d{4}";
-    public static final String ROOM_SERVICE_ID = "^SVRO\\-$\\d{4}";
+    public static final String VILLA_SERVICE_ID = "^SVVL-[0-9]{4}$";
+    public static final String HOUSE_SERVICE_ID = "^SVHO[0-9]{4}$";
+    public static final String ROOM_SERVICE_ID = "^SVRO-[0-9]{4}$";
     /**/
     private static Pattern pattern;
     private Matcher matcher;

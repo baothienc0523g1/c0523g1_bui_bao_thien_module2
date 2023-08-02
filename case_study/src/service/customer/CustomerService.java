@@ -1,6 +1,6 @@
 package service.customer;
 
-import controller.sub_controller.CustomerController;
+import controller.controller_sub.CustomerController;
 
 import model.person.Customer;
 

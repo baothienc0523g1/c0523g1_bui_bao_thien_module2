@@ -22,7 +22,7 @@ public class Bai2 {
         return result;
     }
 
-    public static ArrayList<Character> myTransfer(String s) {
+    private static ArrayList<Character> myTransfer(String s) {
         ArrayList<Character> result = new ArrayList<>();
         for (int i = 0; i < s.length(); i++) {
             result.add(s.charAt(i));

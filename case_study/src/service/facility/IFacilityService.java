@@ -7,5 +7,4 @@ public interface IFacilityService extends IService {
     void getMaintenanceList();
     void delete();
 
-
 }

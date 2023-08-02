@@ -12,6 +12,7 @@ public class House extends Facility {
         this.roomDescription = roomDescription;
         this.floors = floors;
     }
+
     @Override
     public String toStringForSave() {
         return this.serviceID + "," + this.serviceName + "," + this.availableArea + "," +
@@ -108,10 +109,10 @@ public class House extends Facility {
     @Override
     public String toString() {
         return "House: " +
-                ", service ID: " + serviceID +
+                "service ID: " + serviceID +
                 ", service name: " + serviceName +
-                ", available area: " + availableArea +
-                ", rent cost: " + rentCost +
+                ", available area: " + availableArea + " m2" +
+                ", rent cost: $" + rentCost + " / 3 days" +
                 ", max slot: " + maxSlot +
                 ", rent type: " + rentType +
                 ", room description: " + roomDescription +

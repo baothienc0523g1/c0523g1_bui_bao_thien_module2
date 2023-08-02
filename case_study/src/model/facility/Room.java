@@ -88,11 +88,11 @@ public class Room extends Facility {
 
     @Override
     public String toString() {
-        return "Room " +
-                ", service ID: " + serviceID +
+        return "Room: " +
+                "service ID: " + serviceID +
                 ", service name: " + serviceName +
-                ", available area: " + availableArea +
-                ", rent cost: " + rentCost +
+                ", available area: " + availableArea + " m2" +
+                ", rent cost: $" + rentCost + " / 3 days"+
                 ", max slot: " + maxSlot +
                 ", rent type: " + rentType +
                 ", free service gift " + freeServiceGift;

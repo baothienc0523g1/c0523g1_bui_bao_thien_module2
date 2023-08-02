@@ -1,6 +1,6 @@
 package service.employee;
 
-import controller.sub_controller.EmployeeController;
+import controller.controller_sub.EmployeeController;
 import model.person.Employee;
 
 import repository.employee.EmployeeRepository;
@@ -12,7 +12,6 @@ import service.employee.employee_sub.EmployeeEdit;
 import utilities.MyLocalDateRegex;
 import utilities.MyRegex;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 

@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 public class MyLocalDateRegex {
     private static Pattern pattern;
     private Matcher matcher;
-    private static final String LOCAL_DATE_REGEX = "^\\d{4}\\-\\d{2}\\-\\d{2}$";
+    private static final String LOCAL_DATE_REGEX = "^\\d{4}\\-\\d{1,2}\\-\\d{1,2}$";
     public boolean myDateRegex(LocalDate input) {
         String day = input.toString();
         pattern = Pattern.compile(LOCAL_DATE_REGEX);

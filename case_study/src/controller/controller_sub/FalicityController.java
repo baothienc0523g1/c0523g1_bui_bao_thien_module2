@@ -1,4 +1,4 @@
-package controller.sub_controller;
+package controller.controller_sub;
 
 import controller.FuramaController;
 import service.facility.FacilityService;
@@ -24,17 +24,8 @@ public class FalicityController {
                       facilityService.getList();
                       break;
                   case 2:
-                      System.out.println("Add new facility");
-                      System.out.println("1. Add new Villa");
-                      System.out.println("2. Add new House");
-                      System.out.println("3. Add new Room");
-                      System.out.println("4. Back to menu");
-                      int choiceCase2 = Integer.parseInt(scanner.nextLine());
-                      switch (choiceCase2) {
-                          case 5:
-                              displayMainMenu();
-                              break;
-                      }
+                      facilityService.add();
+                      break;
                   case 3:
                       facilityService.getMaintenanceList();
                       break;
