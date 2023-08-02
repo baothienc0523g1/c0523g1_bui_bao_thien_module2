@@ -42,6 +42,6 @@ public class AddHouse extends FacilityService {
         House house = new House(serviceID, serviceName, availableArea, rentCost,
                 maxSlot, renType, description, floors);
         facilityRepository.addHouse(house);
-        System.out.println("House with id: " + serviceID + " added to list");
+        System.out.println("House with id: " + serviceID + " successfully added to list");
     }
 }

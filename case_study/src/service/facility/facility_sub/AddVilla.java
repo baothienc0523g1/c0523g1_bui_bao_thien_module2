@@ -43,7 +43,7 @@ public class AddVilla extends FacilityService {
         Villa villa = new Villa(serviceID, serviceName, availableArea, rentCost,
                 maxSlot, renType, description, poolArea, floors);
         facilityRepository.addVilla(villa);
-        System.out.println("Villa with id: " + serviceID + " added to list");
+        System.out.println("Villa with id: " + serviceID + " successfully added to list");
     }
 
 }

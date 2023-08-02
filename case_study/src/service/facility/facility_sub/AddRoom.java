@@ -19,20 +19,20 @@ public class AddRoom extends FacilityService {
             serviceID = scanner.nextLine();
             if (!idCheck(serviceID)) {
                 System.out.println("ID " + serviceID + " already exist, try again");
-            } else if (!myRegex(serviceID, HOUSE_SERVICE_ID)) {
+            } else if (!myRegex(serviceID, ROOM_SERVICE_ID)) {
                 System.out.println("Service ID: SVRO-NNNN. With N is a number");
             }
         } while (!myRegex(serviceID, ROOM_SERVICE_ID) || !idCheck(serviceID));
 
         System.out.println("Enter service name");
         String serviceName = scanner.nextLine();
-        System.out.println("Enter available area of house");
+        System.out.println("Enter available area of room");
         Double availableArea = Double.parseDouble(scanner.nextLine());
         System.out.println("Enter rent cost for 3 days");
         Double rentCost = Double.parseDouble(scanner.nextLine());
-        System.out.println("Max slot of house");
+        System.out.println("Max slot of room");
         Integer maxSlot = Integer.parseInt(scanner.nextLine());
-        System.out.println("Type of rent for this house");
+        System.out.println("Type of rent for this room");
         String renType = scanner.nextLine();
         System.out.println("Description: ");
         String freeServiceGift = scanner.nextLine();
@@ -40,6 +40,6 @@ public class AddRoom extends FacilityService {
         Room room = new Room(serviceID, serviceName, availableArea, rentCost,
                 maxSlot, renType, freeServiceGift);
         facilityRepository.addRoom(room);
-        System.out.println("Room with id: " + serviceID + " added to list");
+        System.out.println("Room with id: " + serviceID + " successfully added to list");
     }
 }
