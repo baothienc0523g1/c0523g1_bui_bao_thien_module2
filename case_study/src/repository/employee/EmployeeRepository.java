@@ -18,9 +18,9 @@ public class EmployeeRepository implements IEmployeeRepository{
 
         for (String s : strings) {
             pointer = s.split(",");
-            Employee employee = new Employee(pointer[0], LocalDate.parse(pointer[1]),pointer[2],
-                    pointer[3],pointer[4],pointer[5],pointer[6],pointer[7],
-                    pointer[8],Double.parseDouble(pointer[9]));
+            Employee employee = new Employee(pointer[0], LocalDate.parse(pointer[1]),
+                    pointer[2], pointer[3],pointer[4],pointer[5],pointer[6],
+                    pointer[7], pointer[8],Double.parseDouble(pointer[9]));
             employees.add(employee);
         }
         return employees;

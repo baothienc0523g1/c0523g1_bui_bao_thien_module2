@@ -75,7 +75,8 @@ public class CustomerEdit extends CustomerService {
                                     } else if (LocalDate.now().compareTo(birthDay) < 18) {
                                         System.out.println("Customer must be older than 18 years old");
                                     }
-                                } while (!myLocalDateRegex.myDateRegex(birthDay) || LocalDate.now().compareTo(birthDay) < 18);
+                                } while (!myLocalDateRegex.myDateRegex(birthDay)
+                                        || LocalDate.now().compareTo(birthDay) < 18);
                                 c.setBirthDay(birthDay);
                                 customerRepository.edit(id, c);
                                 System.out.println("Customer with id " + id + " is edited");
@@ -151,7 +152,8 @@ public class CustomerEdit extends CustomerService {
                                 do {
                                     type = scanner.nextLine();
                                     if (!myRegex(type.toLowerCase(), CUSTOMER_TYPE)) {
-                                        System.out.println("Customer type must be: Diamond, Platinum, Gold, Silver or Member");
+                                        System.out.println("Customer type must be:" +
+                                                " Diamond, Platinum, Gold, Silver or Member");
                                     }
                                 } while (!myRegex(type.toLowerCase(), CUSTOMER_TYPE));
                                 c.setType(type);

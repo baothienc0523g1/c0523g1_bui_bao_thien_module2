@@ -7,8 +7,8 @@ public class Villa extends Facility {
 
 
     public Villa(String serviceID, String serviceName, Double availableArea,
-                 Double rentCost, Integer maxSlot, String rentType, String roomDescription,
-                 Double poolArea, Integer floors) {
+                 Double rentCost, Integer maxSlot, String rentType,
+                 String roomDescription, Double poolArea, Integer floors) {
         super(serviceID, serviceName, availableArea, rentCost, maxSlot, rentType);
         this.roomDescription = roomDescription;
         this.poolArea = poolArea;
@@ -17,9 +17,10 @@ public class Villa extends Facility {
 
     @Override
     public String toStringForSave() {
-        return this.serviceID + "," + this.serviceName + "," + this.availableArea + "," + this.rentCost
-                + "," + this.maxSlot + "," + this.rentType + "," + this.roomDescription + "," +
-                this.poolArea + "," + this.floors;
+        return this.serviceID + "," + this.serviceName + "," + this.availableArea
+                + "," + this.rentCost + "," + this.maxSlot + ","
+                + this.rentType + "," + this.roomDescription + ","
+                + this.poolArea + "," + this.floors;
     }
 
     @Override

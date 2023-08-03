@@ -37,7 +37,8 @@ public class EmployeeAdd extends EmployeeService {
                 do {
                     name = scanner.nextLine();
                     if (!myRegex(name, NAME)) {
-                        System.out.println("Wrong syntax of name. Name with 2 words and first letter of each word is in upper case");
+                        System.out.println("Wrong syntax of name." +
+                                " Name with 2 words and first letter of each word is in upper case");
                     }
                 } while (!myRegex(name, NAME));
 
@@ -52,7 +53,8 @@ public class EmployeeAdd extends EmployeeService {
                         System.out.println("Wrong format of day");
                     }
                     if (!myLocalDateRegex.myDateRegex(birthDay) || LocalDate.now().compareTo(birthDay) < 18) {
-                        System.out.println("Syntax of birthday is: YYYY-MM-DD or Employee must over 18 years old");
+                        System.out.println("Syntax of birthday is: YYYY-MM-DD " +
+                                "or Employee must over 18 years old");
                     }
                 } while (!myLocalDateRegex.myDateRegex(birthDay) || LocalDate.now().compareTo(birthDay) < 18);
 

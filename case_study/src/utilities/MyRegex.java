@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 public class MyRegex {
     /**/
-    public static final String NAME = "^[A-Z][a-z]*\\s[A-Z][a-z]*$";
+    public static final String NAME = "^[A-Z]\\w.*$";
     public static final String PERSONAL_ID = "^\\d{9}|\\d{12}$";
     public static final String PHONE_NUMBER = "^0\\d{9}$";
     public static final String GENDER = "^male$|^female$|^else$";

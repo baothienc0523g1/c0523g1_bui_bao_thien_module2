@@ -17,6 +17,7 @@ public class EmployeeEdit extends EmployeeService {
     private MyLocalDateRegex myLocalDateRegex = new MyLocalDateRegex();
     private EmployeeController employeeController = new EmployeeController();
     private Scanner scanner = new Scanner(System.in);
+
     public void editWithCase() {
         System.out.println("Enter employee ID need to adjustment");
 
@@ -82,10 +83,12 @@ public class EmployeeEdit extends EmployeeService {
                                     } catch (DateTimeException e) {
                                         System.out.println("Wrong format of day");
                                     }
-                                    if (!myLocalDateRegex.myDateRegex(birthDay) || LocalDate.now().compareTo(birthDay) < 18) {
+                                    if (!myLocalDateRegex.myDateRegex(birthDay) ||
+                                            LocalDate.now().compareTo(birthDay) < 18) {
                                         System.out.println("Syntax of birthday is: YYYY-MM-DD");
                                     }
-                                } while (!myLocalDateRegex.myDateRegex(birthDay) || LocalDate.now().compareTo(birthDay) < 18);
+                                } while (!myLocalDateRegex.myDateRegex(birthDay) ||
+                                        LocalDate.now().compareTo(birthDay) < 18);
                                 employee.setBirthDay(birthDay);
                                 employeeRepository.edit(id, employee);
                                 System.out.println("Employee with ID " + id + " is edited");
@@ -143,12 +146,14 @@ public class EmployeeEdit extends EmployeeService {
                                 System.out.println("Employee with ID " + id + " is edited");
                                 break;
                             case 8:
-                                System.out.println("New employee level: Intermediate, Degree, College or Graduate");
+                                System.out.println("New employee level:" +
+                                        " Intermediate, Degree, College or Graduate");
                                 String level = "";
                                 do {
                                     level = scanner.nextLine();
                                     if (!myRegex(level.toLowerCase(), EMPLOY_LEVEL)) {
-                                        System.out.println("Level only can be: Intermediate, Degree, College or Graduate");
+                                        System.out.println("Level only can be:" +
+                                                " Intermediate, Degree, College or Graduate");
                                     }
                                 } while (!myRegex(level.toLowerCase(), EMPLOY_LEVEL));
 
@@ -175,6 +180,7 @@ public class EmployeeEdit extends EmployeeService {
             System.out.println("Cant find employee with id " + id);
         }
     }
+
     public void editAll(String id) {
         for (Employee employee : employeeRepository.getList()) {
             if (employee.getId().equals(id)) {
