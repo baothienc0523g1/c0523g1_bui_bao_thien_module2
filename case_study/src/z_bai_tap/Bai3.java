@@ -1,6 +1,4 @@
-package z_bai_tap_lam_them;
-
-import java.util.ArrayList;
+package z_bai_tap;
 
 public class Bai3 {
     public static boolean beautifulArray(int[] arr) {

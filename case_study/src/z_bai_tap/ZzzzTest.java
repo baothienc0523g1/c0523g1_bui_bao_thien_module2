@@ -1,13 +1,6 @@
-package z_bai_tap_lam_them;
+package z_bai_tap;
 
-import model.facility.House;
-import model.facility.Room;
-import model.facility.Villa;
-
-import java.util.ArrayList;
-import java.util.List;
-
-public class Test {
+public class ZzzzTest {
 //    private List<Villa> getVillaFromCSV() {
 //        List<Villa> villas = new ArrayList<>();
 //        List<String> strings = myReadFromCSV(VILLA_PATH);

@@ -10,7 +10,6 @@ import java.util.Scanner;
 
 public class AddRoom extends FacilityService {
     private IFacilityRepository facilityRepository = new FacilityRepository();
-
     public void addRoom() {
         Scanner scanner = new Scanner(System.in);
 

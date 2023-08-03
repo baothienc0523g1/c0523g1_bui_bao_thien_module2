@@ -1,4 +1,4 @@
-package z_bai_tap_lam_them;
+package z_bai_tap;
 
 public class Bai4 {
     /* chua hoan thanh */

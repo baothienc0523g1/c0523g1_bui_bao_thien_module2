@@ -1,4 +1,4 @@
-package z_bai_tap_lam_them;
+package z_bai_tap;
 
 import java.util.ArrayList;
 
@@ -33,7 +33,7 @@ public class Bai2 {
     public static void main(String[] args) {
         String s1 = "aabcc";
         String s2 = "adcaa";
-        System.out.println("s1+s2: " + myCheckList(s1, s2));//3
+        System.out.println("s1+s2: " + myCheckList(s1, s2).size());//3
 
         String s3 = "Abcdef";
         String s4 = "Adghjklbc";

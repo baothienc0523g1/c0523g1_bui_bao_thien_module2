@@ -1,4 +1,4 @@
-package z_bai_tap_lam_them;
+package z_bai_tap;
 
 public class Bai11 {
     public static int check(int buy, int get, int total) {

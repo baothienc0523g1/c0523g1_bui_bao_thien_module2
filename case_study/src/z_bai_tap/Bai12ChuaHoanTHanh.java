@@ -1,8 +1,8 @@
-package z_bai_tap_lam_them;
+package z_bai_tap;
 
 import java.util.ArrayList;
 
-public class Bai12 {
+public class Bai12ChuaHoanTHanh {
     public static int taxi(int[] list) {
         ArrayList<Integer> myArr = convert(list);
         int taxiCount = 0;

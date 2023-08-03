@@ -1,4 +1,4 @@
-package z_bai_tap_lam_them;
+package z_bai_tap;
 
 public class Bai5 {
     public static void sortByHeight(int [] list) {
