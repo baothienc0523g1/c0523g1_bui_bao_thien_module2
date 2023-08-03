@@ -67,16 +67,19 @@ public class FacilityService extends MyRegex implements IFacilityService {
     }
 
     public void addVilla() {
+        System.out.println("New villa");
         AddVilla addVilla = new AddVilla();
         addVilla.addVilla();
     }
 
     public void addHouse() {
+        System.out.println("New house");
         AddHouse addHouse = new AddHouse();
         addHouse.addHouse();
     }
 
     public void addRoom() {
+        System.out.println("New room");
         AddRoom addRoom = new AddRoom();
         addRoom.addRoom();
     }

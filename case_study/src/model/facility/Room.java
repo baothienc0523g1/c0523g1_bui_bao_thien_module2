@@ -15,7 +15,7 @@ public class Room extends Facility {
     public String toStringForSave() {
         return this.serviceID + "," + this.serviceName + "," + this.availableArea + ","
                 + this.rentCost + "," + this.maxSlot + "," +
-                this.rentType + "," + this.rentType + "," + this.freeServiceGift;
+                this.rentType + "," + this.freeServiceGift;
     }
 
     @Override
@@ -92,10 +92,10 @@ public class Room extends Facility {
                 "service ID: " + serviceID +
                 ", service name: " + serviceName +
                 ", available area: " + availableArea + " m2" +
-                ", rent cost: $" + rentCost + " / 3 days"+
+                ", rent cost: $" + rentCost + " / 3 days" +
                 ", max slot: " + maxSlot +
                 ", rent type: " + rentType +
-                ", free service gift " + freeServiceGift;
+                ", free service gift: " + freeServiceGift;
     }
 
     @Override
