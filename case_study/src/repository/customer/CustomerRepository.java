@@ -52,7 +52,6 @@ public class CustomerRepository extends ReadAndWrite implements ICustomerReposit
                 c.setEmail(customer.getEmail());
                 c.setType(customer.getType());
                 c.setAddress(customer.getAddress());
-                break;
             }
         }
         List<String> stringList = new ArrayList<>();
@@ -65,10 +64,9 @@ public class CustomerRepository extends ReadAndWrite implements ICustomerReposit
     @Override
     public void delete(String id) {
         List<Customer> temp = customerList;
-        for (int i = 0; i < temp.size(); i++) {
-            Customer c = temp.get(i);
-            if (c.getId().equals(i)) {
-                customerList.remove(c);
+        for (Customer customer : customerList) {
+            if (customer.getId().equals(id)) {
+                customerList.remove(customer);
                 break;
             }
         }

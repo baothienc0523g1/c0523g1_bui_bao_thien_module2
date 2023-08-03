@@ -15,7 +15,6 @@ public class Bai11 {
         } else {
             return result2;
         }
-
     }
 
     public static void main(String[] args) {

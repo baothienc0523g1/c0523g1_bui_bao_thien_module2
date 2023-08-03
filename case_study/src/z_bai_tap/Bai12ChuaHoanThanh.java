@@ -2,7 +2,7 @@ package z_bai_tap;
 
 import java.util.ArrayList;
 
-public class Bai12ChuaHoanTHanh {
+public class Bai12ChuaHoanThanh {
     public static int taxi(int[] list) {
         ArrayList<Integer> myArr = convert(list);
         int taxiCount = 0;
