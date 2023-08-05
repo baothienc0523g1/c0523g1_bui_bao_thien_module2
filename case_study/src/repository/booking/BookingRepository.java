@@ -62,8 +62,9 @@ public class BookingRepository extends ReadAndWrite implements IBookingRepositor
 
         for (String s : contractString) {
             pointer = s.split(",");
-            Contract contract = new Contract(pointer[0], pointer[1],
-                    Double.parseDouble(pointer[2]), Double.parseDouble(pointer[3]));
+            Contract contract = new Contract(LocalDate.parse(pointer[0]), LocalDate.parse(pointer[1]),
+                    LocalDate.parse(pointer[2]), pointer[3], pointer[4], pointer[5]
+                    , pointer[6], Double.parseDouble(pointer[7]), Double.parseDouble(pointer[8]));
             contractList.add(contract);
         }
         return contractList;

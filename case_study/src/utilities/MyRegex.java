@@ -4,6 +4,13 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MyRegex {
+    private static Pattern pattern;
+    private Matcher matcher;
+    public boolean myRegex(String input, String REGEX_STRING) {
+        pattern = Pattern.compile(REGEX_STRING);
+        matcher = pattern.matcher(input);
+        return matcher.matches();
+    }
     /**/
     public static final String NAME = "^[A-Z]\\w.*$";
     public static final String PERSONAL_ID = "^\\d{9}|\\d{12}$";
@@ -20,13 +27,8 @@ public class MyRegex {
     public static final String ROOM_SERVICE_ID = "^SVRO-[0-9]{4}$";
     public static final String FACILITY_SERVICE_NAME = "^[A-Z]\\w.*$";
     public static final String BOOKING_ID = "^B-[0-9]{4}$";
-    /**/
-    private static Pattern pattern;
-    private Matcher matcher;
-    public boolean myRegex(String input, String REGEX_STRING) {
-        pattern = Pattern.compile(REGEX_STRING);
-        matcher = pattern.matcher(input);
-        return matcher.matches();
-    }
+    public static final String CONTRACT_ID = "^C-[0-9]{4}$";
+    public static final String NUMBER_FORMAT = "^[0-9]*$";
 
+    /**/
 }

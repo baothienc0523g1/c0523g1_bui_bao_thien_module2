@@ -103,9 +103,9 @@ public class FacilityService extends MyRegex implements IFacilityService {
     }
 
     @Override
-    public void getIdList() {
-        List<String> idList = facilityRepository.getIdList();
-        System.out.println("Pick a facility ID down below");
+    public void getVillaIdList() {
+        List<String> idList = facilityRepository.getVillaIdList();
+        System.out.println("Pick a Villa ID down below");
         for (String string : idList) {
             System.out.println(string);
         }
@@ -116,6 +116,15 @@ public class FacilityService extends MyRegex implements IFacilityService {
         System.out.println("Pick a Room ID down below");
         List<String> roomIdList = facilityRepository.getRoomIdList();
         for (String string : roomIdList) {
+            System.out.println(string);
+        }
+    }
+
+    @Override
+    public void getHouseIdList() {
+        List<String> idList = facilityRepository.getHouseIdList();
+        System.out.println("Pick a House ID down below");
+        for (String string : idList) {
             System.out.println(string);
         }
     }

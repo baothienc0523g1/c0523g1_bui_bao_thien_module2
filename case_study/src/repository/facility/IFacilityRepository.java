@@ -10,7 +10,8 @@ import java.util.List;
 import java.util.Map;
 
 public interface IFacilityRepository {
-    List<String> getIdList();
+    List<String> getVillaIdList();
+    List<String> getHouseIdList();
     List<String> getRoomIdList();
     Map<Facility, Integer> getList();
 

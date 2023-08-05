@@ -211,15 +211,11 @@ public class FacilityRepository extends ReadAndWrite implements IFacilityReposit
     }
 
     @Override
-    public List<String> getIdList() {
+    public List<String> getVillaIdList() {
         List<String> idList = new ArrayList<>();
-        for (Facility facility : getHouseList()) {
-            idList.add(facility.getServiceID());
-        }
         for (Facility facility : getVillaList()) {
             idList.add(facility.getServiceID());
         }
-
         return idList;
     }
     @Override
@@ -228,7 +224,15 @@ public class FacilityRepository extends ReadAndWrite implements IFacilityReposit
         for (Facility facility : getRoomList()) {
             idList.add(facility.getServiceID());
         }
+        return idList;
+    }
 
+    @Override
+    public List<String> getHouseIdList() {
+        List<String> idList = new ArrayList<>();
+        for (Facility facility : getHouseList()) {
+            idList.add(facility.getServiceID());
+        }
         return idList;
     }
 }
