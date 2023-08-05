@@ -15,8 +15,9 @@ public class BookingRepository extends ReadAndWrite implements IBookingRepositor
 
     @Override
     public void add(Booking booking) {
-        List<String> temp = new ArrayList<>();
         getBookingListFromCSV().add(booking);
+
+        List<String> temp = new ArrayList<>();
         temp.add(booking.toStringForSave());
         myWriteToCSV(temp, BOOKING_LOCAL_FILE, true);
     }

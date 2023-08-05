@@ -1,12 +1,11 @@
 package service.booking.booking_sub;
 
-import model.business.Booking;
+import model.business.Contract;
 import repository.booking.BookingRepository;
 import repository.booking.IBookingRepository;
 import service.booking.BookingService;
 import service.customer.CustomerService;
 import service.customer.ICustomerService;
-
 import service.facility.FacilityService;
 import service.facility.IFacilityService;
 import utilities.MyLocalDateRegex;
@@ -14,7 +13,7 @@ import utilities.MyLocalDateRegex;
 import java.time.LocalDate;
 import java.util.Scanner;
 
-public class RoomContract extends BookingService {
+public class HouseContract extends BookingService {
     private ICustomerService customerService = new CustomerService();
     private MyLocalDateRegex myLocalDateRegex = new MyLocalDateRegex();
     private IFacilityService facilityService = new FacilityService();
@@ -23,7 +22,7 @@ public class RoomContract extends BookingService {
     private Scanner scanner = new Scanner(System.in);
 
 
-    public void addRoom() {
+    public void addHouse() {
         customerService.getIdAndName();
         System.out.println("Customer ID:");
         String customerId;
@@ -36,6 +35,15 @@ public class RoomContract extends BookingService {
                 System.out.println("Wrong format, ID: KH-NNNN, with N is a number");
             }
         } while (customerService.idCheck(customerId) || !myRegex(customerId, CUSTOMER_ID));
+
+        System.out.println("Enter contract ID (C-NNNN):");
+        String contractId;
+        do {
+            contractId = scanner.nextLine();
+            if (!myRegex(contractId, CONTRACT_ID)) {
+                System.out.println("Wrong format of contract ID");
+            }
+        } while (!myRegex(contractId, CONTRACT_ID));
 
         System.out.println("Booking ID: B-NNNN, with N is a number");
         String bookingID;
@@ -52,6 +60,7 @@ public class RoomContract extends BookingService {
         System.out.println("Enter booking day");
         LocalDate dayBook = null;
         do {
+
             dayBook = LocalDate.parse(scanner.nextLine());
             if (!myLocalDateRegex.myDateRegex(dayBook)) {
                 System.out.println("Wrong format of date");
@@ -86,20 +95,39 @@ public class RoomContract extends BookingService {
         System.out.println("Service ID");
 
         String serviceId;
-        facilityService.getRoomIdList();
+        facilityService.getHouseIdList();
         do {
             serviceId = scanner.nextLine();
             if (facilityService.idCheck(serviceId)) {
                 System.out.println("ID not found, put a gain");
             }
-            if (!myRegex(serviceId, ROOM_SERVICE_ID)) {
-                System.out.println("Wrong format, ID: SVRO-NNNN, with N is a number");
+            if (!myRegex(serviceId, HOUSE_SERVICE_ID)) {
+                System.out.println("Wrong format, ID: SVHO-NNNN, with N is a number");
             }
-        } while (facilityService.idCheck(serviceId) || !myRegex(serviceId, ROOM_SERVICE_ID));
+        } while (facilityService.idCheck(serviceId) || !myRegex(serviceId, VILLA_SERVICE_ID));
 
-        Booking booking = new Booking(bookingID, dayBook, checkIn,
-                checkOut, customerId, serviceId);
-        bookingRepository.add(booking);
-        System.out.println("Booking with ID " + bookingID + " successfully added");
+        System.out.println("Deposit");
+        Double deposit;
+        do {
+            deposit = Double.parseDouble(scanner.nextLine());
+            if (!myRegex(String.valueOf(deposit), NUMBER_FORMAT)) {
+                System.out.println("Wrong format of number");
+            }
+        } while (!myRegex(String.valueOf(deposit), NUMBER_FORMAT));
+
+        Double totalCost;
+        do {
+            totalCost =  Double.parseDouble(scanner.nextLine());
+            if (!myRegex(String.valueOf(totalCost), NUMBER_FORMAT)) {
+                System.out.println("Wrong format of number");
+            }
+        } while (!myRegex(String.valueOf(totalCost), NUMBER_FORMAT));
+
+
+        Contract contract = new Contract(dayBook, checkIn, checkOut,
+                customerId, serviceId, contractId, bookingID,
+                deposit, totalCost);
+        bookingRepository.createNewContracts(contract);
+        System.out.println("Create new contract with ID: " + contractId + " successfully");
     }
 }
