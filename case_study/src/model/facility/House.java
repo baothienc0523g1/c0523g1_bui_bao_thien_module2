@@ -15,8 +15,8 @@ public class House extends Facility {
 
     @Override
     public String toStringForSave() {
-        return this.serviceID + "," + this.serviceName + "," + this.availableArea + "," +
-                this.rentCost + "," + this.maxSlot + "," + this.rentType
+        return this.serviceID + "," + this.serviceName + "," + this.availableArea
+                + "," + this.rentCost + "," + this.maxSlot + "," + this.rentType + ","
                 + this.roomDescription + "," + this.floors;
     }
 
@@ -118,6 +118,5 @@ public class House extends Facility {
                 ", room description: " + roomDescription +
                 ", floors: " + floors;
     }
-
 
 }

@@ -16,6 +16,10 @@ public class Contract implements Serializable {
         this.deposit = deposit;
         this.totalCost = totalCost;
     }
+    public String toStringForSave() {
+        return this.contractID + "," + this.bookingID
+                + "," + this.deposit + "," + this.totalCost;
+    }
 
     public Contract() {
     }

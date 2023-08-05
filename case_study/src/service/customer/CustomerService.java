@@ -14,7 +14,9 @@ import utilities.MyLocalDateRegex;
 import utilities.MyRegex;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class CustomerService extends MyRegex implements ICustomerService {
     private ICustomerRepository customerRepository = new CustomerRepository();
@@ -23,7 +25,7 @@ public class CustomerService extends MyRegex implements ICustomerService {
 
     private static Scanner scanner = new Scanner(System.in);
 
-    protected boolean idCheck(String id) {
+    public boolean idCheck(String id) {
         boolean flag = true;
         List<Customer> temp = customerRepository.getList();
 
@@ -78,6 +80,13 @@ public class CustomerService extends MyRegex implements ICustomerService {
             System.out.println(customerRepository.search(name));
         } else {
             System.out.println("Cant find customer with name " + name);
+        }
+    }
+    public void getIdAndName() {
+        Map<String, String> idAndName = customerRepository.getIdAndName();
+        System.out.println("Pick a customer in list down below: ");
+        for (String stringMap : idAndName.keySet()) {
+            System.out.println(stringMap + " |3" + idAndName.get(stringMap));
         }
     }
 }

@@ -3,7 +3,7 @@ package model.business;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Booking implements Serializable {
+public class Booking implements Serializable, Comparable<Booking> {
     private String bookingID;
     private LocalDate dayBook;
     private LocalDate checkInDay;
@@ -14,14 +14,19 @@ public class Booking implements Serializable {
 
 
     public Booking(String bookingID, LocalDate dayBook,
-                   LocalDate dayStart, LocalDate dayEnd,
+                   LocalDate checkInDay, LocalDate checkOutDay,
                    String customerId, String serviceId) {
         this.bookingID = bookingID;
         this.dayBook = dayBook;
-        this.checkInDay = dayStart;
-        this.checkOutDay = dayEnd;
+        this.checkInDay = checkInDay;
+        this.checkOutDay = checkOutDay;
         this.customerId = customerId;
         this.serviceId = serviceId;
+    }
+    public String toStringForSave() {
+        return this.bookingID + "," + this.dayBook
+                + "," + this.checkInDay  + "," + this.checkOutDay
+                + "," + this.customerId  + "," + this.serviceId;
     }
     private Booking() {}
 
@@ -83,5 +88,14 @@ public class Booking implements Serializable {
                 ", customerId='" + customerId + '\'' +
                 ", serviceId='" + serviceId + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Booking o) {
+        int cmp = dayBook.getMonth().compareTo(o.getDayBook().getMonth());
+        if (cmp == 0) {
+            cmp = dayBook.getDayOfMonth() - o.getDayBook().getDayOfMonth();
+        }
+        return cmp;
     }
 }

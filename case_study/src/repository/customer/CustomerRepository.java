@@ -6,6 +6,8 @@ import utilities.ReadAndWrite;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class CustomerRepository extends ReadAndWrite implements ICustomerRepository {
     private final String CUSTOMER_FILE_PATH = "D:\\GIT - Bai tap\\case_study\\src\\data\\customer.csv";
@@ -87,5 +89,14 @@ public class CustomerRepository extends ReadAndWrite implements ICustomerReposit
             }
         }
         return customers;
+    }
+
+    @Override
+    public Map<String, String> getIdAndName() {
+        Map<String, String> idAndNameList = new TreeMap<>();
+        for (Customer customer : customerList) {
+            idAndNameList.put(customer.getId(), customer.getName());
+        }
+        return idAndNameList;
     }
 }

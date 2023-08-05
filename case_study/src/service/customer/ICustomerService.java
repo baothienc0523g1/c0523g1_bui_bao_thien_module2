@@ -14,4 +14,6 @@ public interface ICustomerService extends IService {
     void delete();
 
     void searchByName();
+    void getIdAndName();
+    boolean idCheck(String id);
 }

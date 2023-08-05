@@ -63,10 +63,10 @@ public class AddVilla extends FacilityService {
         String renType;
         do {
             renType = scanner.nextLine();
-            if (!renType.equals(serviceID)) {
-                System.out.println("Rent type can't be difference with service ID");
+            if (!myRegex(renType, FACILITY_SERVICE_NAME)) {
+                System.out.println("Rent type is a string with first letter in upper case");
             }
-        } while (!renType.equals(serviceID));
+        } while (!myRegex(renType, FACILITY_SERVICE_NAME));
 
         System.out.println("Description: ");
         String description = scanner.nextLine();

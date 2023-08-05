@@ -64,10 +64,10 @@ public class AddHouse extends FacilityService {
         String renType;
         do {
             renType = scanner.nextLine();
-            if (!renType.equals(serviceID)) {
+            if (!myRegex(renType, FACILITY_SERVICE_NAME)) {
                 System.out.println("Rent type can't be difference with service ID");
             }
-        } while (!renType.equals(serviceID));
+        } while (!myRegex(renType, FACILITY_SERVICE_NAME));
 
         System.out.println("Description: ");
         String description = scanner.nextLine();

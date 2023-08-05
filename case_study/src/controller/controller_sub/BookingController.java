@@ -1,11 +1,15 @@
 package controller.controller_sub;
 
 import controller.FuramaController;
+import service.booking.BookingService;
+import service.booking.IBookingService;
+import service.customer.CustomerService;
 
 import java.util.Scanner;
 
 public class BookingController {
     private static FuramaController furamaController = new FuramaController();
+    private static IBookingService bookingService = new BookingService();
     public void displayMainMenu() {
         Scanner scanner = new Scanner(System.in);
         do {
@@ -19,6 +23,12 @@ public class BookingController {
                 System.out.println("6. Return to main menu");
                 int choice4 = Integer.parseInt(scanner.nextLine());
                 switch (choice4) {
+                    case 1:
+                        bookingService.add();
+                        break;
+                    case 2:
+                        bookingService.getList();
+                        break;
                     case 6:
                         furamaController.display();
                         break;

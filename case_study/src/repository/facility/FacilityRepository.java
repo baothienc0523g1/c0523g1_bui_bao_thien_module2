@@ -5,6 +5,7 @@ import model.facility.House;
 import model.facility.Room;
 import model.facility.Villa;
 import utilities.ReadAndWrite;
+import utilities.SortedFacilityByID;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -18,6 +19,7 @@ public class FacilityRepository extends ReadAndWrite implements IFacilityReposit
     private List<Villa> villaArrayList = getVillaList();
     private List<House> houseArrayList = getHouseList();
     private List<Room> roomArrayList = getRoomList();
+
     @Override
     public Map<Facility, Integer> getList() {
         Map<Facility, Integer> facilities = new LinkedHashMap<>();
@@ -33,6 +35,7 @@ public class FacilityRepository extends ReadAndWrite implements IFacilityReposit
         }
         return facilities;
     }
+
     @Override
     public void add(Facility facility) {
         if (facility instanceof Villa) {
@@ -122,6 +125,8 @@ public class FacilityRepository extends ReadAndWrite implements IFacilityReposit
                     pointer[5], pointer[6], Integer.parseInt(pointer[7]));
             houseList.add(house);
         }
+        SortedFacilityByID sortedFacilityByID = new SortedFacilityByID();
+        Collections.sort(houseList, sortedFacilityByID);
         return houseList;
     }
 
@@ -137,6 +142,8 @@ public class FacilityRepository extends ReadAndWrite implements IFacilityReposit
                     pointer[5], pointer[6]);
             roomList.add(room);
         }
+        SortedFacilityByID sortedFacilityByID = new SortedFacilityByID();
+        Collections.sort(roomList, sortedFacilityByID);
         return roomList;
     }
 
@@ -152,6 +159,8 @@ public class FacilityRepository extends ReadAndWrite implements IFacilityReposit
                     pointer[5], pointer[6], Double.parseDouble(pointer[7]), Integer.parseInt(pointer[8]));
             villas.add(villa);
         }
+        SortedFacilityByID sortedFacilityByID = new SortedFacilityByID();
+        Collections.sort(villas, sortedFacilityByID);
         return villas;
     }
 
@@ -186,6 +195,7 @@ public class FacilityRepository extends ReadAndWrite implements IFacilityReposit
     public List<String> getMaintenanceList() {
         return null;
     }
+
     public List<Facility> getFacilityForSearch() {
         List<Facility> facilities = new ArrayList<>();
         for (Villa villa : getVillaList()) {
