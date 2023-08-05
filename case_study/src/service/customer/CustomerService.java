@@ -86,7 +86,7 @@ public class CustomerService extends MyRegex implements ICustomerService {
         Map<String, String> idAndName = customerRepository.getIdAndName();
         System.out.println("Pick a customer in list down below: ");
         for (String stringMap : idAndName.keySet()) {
-            System.out.println(stringMap + " |3" + idAndName.get(stringMap));
+            System.out.println(stringMap + " | " + idAndName.get(stringMap));
         }
     }
 }

@@ -8,5 +8,6 @@ public interface IEmployeeService extends IService {
 
     void searchByName();
     void delete();
-
+    boolean idCheck(String id);
+    void getIdAndName();
 }

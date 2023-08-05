@@ -1,13 +1,16 @@
 package repository.employee;
 
+import model.person.Customer;
 import model.person.Employee;
 import utilities.ReadAndWrite;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
-public class EmployeeRepository implements IEmployeeRepository{
+public class EmployeeRepository implements IEmployeeRepository {
     private static final String EMPLOYEE_FILE_PATH = "D:\\GIT - Bai tap\\case_study\\src\\data\\employee.csv";
     private List<Employee> employeeList = listToEmployee();
 
@@ -19,15 +22,16 @@ public class EmployeeRepository implements IEmployeeRepository{
         for (String s : strings) {
             pointer = s.split(",");
             Employee employee = new Employee(pointer[0], LocalDate.parse(pointer[1]),
-                    pointer[2], pointer[3],pointer[4],pointer[5],pointer[6],
-                    pointer[7], pointer[8],Double.parseDouble(pointer[9]));
+                    pointer[2], pointer[3], pointer[4], pointer[5], pointer[6],
+                    pointer[7], pointer[8], Double.parseDouble(pointer[9]));
             employees.add(employee);
         }
         return employees;
     }
+
     @Override
     public List<Employee> getList() {
-       return listToEmployee();
+        return listToEmployee();
     }
 
     @Override
@@ -59,7 +63,7 @@ public class EmployeeRepository implements IEmployeeRepository{
         for (Employee e : employeeList) {
             stringList.add(e.getInfoToCSV());
         }
-        ReadAndWrite.myWriteToCSV(stringList, EMPLOYEE_FILE_PATH,false);
+        ReadAndWrite.myWriteToCSV(stringList, EMPLOYEE_FILE_PATH, false);
     }
 
     @Override
@@ -74,7 +78,7 @@ public class EmployeeRepository implements IEmployeeRepository{
         for (Employee employee : employeeList) {
             stringList.add(employee.getInfoToCSV());
         }
-        ReadAndWrite.myWriteToCSV(stringList, EMPLOYEE_FILE_PATH,false);
+        ReadAndWrite.myWriteToCSV(stringList, EMPLOYEE_FILE_PATH, false);
     }
 
     @Override
@@ -87,5 +91,13 @@ public class EmployeeRepository implements IEmployeeRepository{
             }
         }
         return employees;
+    }
+    @Override
+    public Map<String, String> getIdAndName() {
+        Map<String, String> idAndNameList = new TreeMap<>();
+        for (Employee employee : employeeList) {
+            idAndNameList.put(employee.getId(), employee.getName());
+        }
+        return idAndNameList;
     }
 }

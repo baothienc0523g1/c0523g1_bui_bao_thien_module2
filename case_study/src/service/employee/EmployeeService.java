@@ -13,6 +13,7 @@ import utilities.MyLocalDateRegex;
 import utilities.MyRegex;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 
@@ -22,7 +23,7 @@ public class EmployeeService extends MyRegex implements IEmployeeService {
     private EmployeeController employeeController = new EmployeeController();
     private Scanner scanner = new Scanner(System.in);
 
-    protected boolean idCheck(String id) {
+    public boolean idCheck(String id) {
         boolean flag = true;
         List<Employee> temp = employeeRepository.getList();
 
@@ -76,6 +77,14 @@ public class EmployeeService extends MyRegex implements IEmployeeService {
             System.out.println(employeeRepository.search(name));
         } else {
             System.out.println("Cant find employee with name " + name);
+        }
+    }
+
+    public void getIdAndName() {
+        Map<String, String> idAndName = employeeRepository.getIdAndName();
+        System.out.println("Chose Employee service ID down below: ");
+        for (String string : idAndName.keySet()) {
+            System.out.println(string + " | " + idAndName.get(string));
         }
     }
 }
