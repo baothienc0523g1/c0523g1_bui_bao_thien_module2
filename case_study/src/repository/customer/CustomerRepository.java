@@ -4,10 +4,7 @@ import model.person.Customer;
 import utilities.ReadAndWrite;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class CustomerRepository extends ReadAndWrite implements ICustomerRepository {
     private final String CUSTOMER_FILE_PATH = "D:\\GIT - Bai tap\\case_study\\src\\data\\customer.csv";
@@ -31,7 +28,7 @@ public class CustomerRepository extends ReadAndWrite implements ICustomerReposit
 
     @Override
     public List<Customer> getList() {
-        return listToCustomer();
+        return customerList;
     }
 
     @Override

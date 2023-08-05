@@ -10,19 +10,28 @@ import java.util.List;
 import java.util.Map;
 
 public interface IFacilityRepository {
-    Map<Facility,Integer>  getList();
+    List<String> getIdList();
+    List<String> getRoomIdList();
+    Map<Facility, Integer> getList();
 
     List<String> getMaintenanceList();
 
     void add(Facility facility);
+
     void addVilla(Villa villa);
+
     void addHouse(House house);
+
     void addRoom(Room room);
+
     List<Villa> getVillaList();
+
     List<House> getHouseList();
+
     List<Room> getRoomList();
+
     List<Facility> getFacilityForSearch();
 
-        void delete(String id);
+    void delete(String id);
 
 }

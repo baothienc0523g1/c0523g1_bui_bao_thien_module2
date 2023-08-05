@@ -10,9 +10,7 @@ import service.facility.facility_sub.AddRoom;
 import service.facility.facility_sub.AddVilla;
 import utilities.MyRegex;
 
-import java.util.InputMismatchException;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class FacilityService extends MyRegex implements IFacilityService {
     private IFacilityRepository facilityRepository = new FacilityRepository();
@@ -55,7 +53,8 @@ public class FacilityService extends MyRegex implements IFacilityService {
         }
     }
 
-    protected boolean idCheck(String id) {
+    @Override
+    public boolean idCheck(String id) {
         boolean flag = true;
         for (Facility facility : facilityRepository.getFacilityForSearch()) {
             if (facility.getServiceID().equals(id)) {
@@ -100,6 +99,24 @@ public class FacilityService extends MyRegex implements IFacilityService {
             System.out.println("Facility with id: " + serviceID + " is removed!");
         } else {
             System.out.println("There is no facility with id: " + serviceID);
+        }
+    }
+
+    @Override
+    public void getIdList() {
+        List<String> idList = facilityRepository.getIdList();
+        System.out.println("Pick a facility ID down below");
+        for (String string : idList) {
+            System.out.println(string);
+        }
+    }
+
+    @Override
+    public void getRoomIdList() {
+        System.out.println("Pick a Room ID down below");
+        List<String> roomIdList = facilityRepository.getRoomIdList();
+        for (String string : roomIdList) {
+            System.out.println(string);
         }
     }
 }

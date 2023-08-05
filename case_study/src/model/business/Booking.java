@@ -23,12 +23,15 @@ public class Booking implements Serializable, Comparable<Booking> {
         this.customerId = customerId;
         this.serviceId = serviceId;
     }
+
     public String toStringForSave() {
         return this.bookingID + "," + this.dayBook
-                + "," + this.checkInDay  + "," + this.checkOutDay
-                + "," + this.customerId  + "," + this.serviceId;
+                + "," + this.checkInDay + "," + this.checkOutDay
+                + "," + this.customerId + "," + this.serviceId;
     }
-    private Booking() {}
+
+    private Booking() {
+    }
 
     public String getBookingID() {
         return bookingID;
@@ -80,14 +83,12 @@ public class Booking implements Serializable, Comparable<Booking> {
 
     @Override
     public String toString() {
-        return "Booking{" +
-                "bookingID='" + bookingID + '\'' +
-                ", dayBook=" + dayBook +
-                ", dayStart=" + checkInDay +
-                ", dayEnd=" + checkOutDay +
-                ", customerId='" + customerId + '\'' +
-                ", serviceId='" + serviceId + '\'' +
-                '}';
+        return "Booking: " + bookingID + "\n" +
+                "Day book: " + dayBook + "\n" +
+                "Check-in: " + checkInDay + "\n" +
+                "Check-out: " + checkOutDay + "\n" +
+                "Customer ID: " + customerId + "\n" +
+                "Service ID: " + serviceId;
     }
 
     @Override

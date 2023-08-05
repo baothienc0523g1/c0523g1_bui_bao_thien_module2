@@ -3,7 +3,7 @@ package model.person;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public abstract class Person  {
+public abstract class Person {
     protected String name;
     protected LocalDate birthDay;
     protected String gender;

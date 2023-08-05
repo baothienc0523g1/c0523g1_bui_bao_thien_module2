@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Employee extends Person implements Serializable {
+public class Employee extends Person implements Serializable, Comparable<Employee> {
     private static final long serialVersionUID = -1122;
     private String id;
     private String level;
@@ -20,9 +20,6 @@ public class Employee extends Person implements Serializable {
         this.level = level;
         this.position = position;
         this.salary = salary;
-    }
-    public Employee(String id) {
-        this.id = id;
     }
     public String getInfoToCSV() {
         return this.name + "," + this.birthDay + "," + this.gender
@@ -78,5 +75,9 @@ public class Employee extends Person implements Serializable {
                 + ", gender: " + gender + ", email: " + email
                 + ", personal ID: " + personalId + ", phone number: "
                 + phoneNumber + ", salary: $" + salary;
+    }
+    @Override
+    public int compareTo(Employee o) {
+        return this.getId().compareTo(o.getId());
     }
 }

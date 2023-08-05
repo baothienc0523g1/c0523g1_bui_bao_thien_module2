@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Customer extends Person implements Serializable {
+public class Customer extends Person implements Serializable, Comparable<Customer>{
     private static final long serialVersionUID = -1133;
     private String id;
     private String type;
@@ -74,5 +74,9 @@ public class Customer extends Person implements Serializable {
         if (o == null || getClass() != o.getClass()) return false;
         Customer customer = (Customer) o;
         return Objects.equals(id, customer.id);
+    }
+    @Override
+    public int compareTo(Customer o) {
+        return this.getId().compareTo(o.getId());
     }
 }

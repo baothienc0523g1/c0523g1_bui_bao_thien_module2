@@ -7,6 +7,7 @@ import model.person.Customer;
 import repository.customer.CustomerRepository;
 import repository.customer.ICustomerRepository;
 
+import service.booking.BookingService;
 import service.customer.customer_sub.CustomerAdd;
 import service.customer.customer_sub.CustomerEdit;
 
@@ -20,9 +21,6 @@ import java.util.TreeMap;
 
 public class CustomerService extends MyRegex implements ICustomerService {
     private ICustomerRepository customerRepository = new CustomerRepository();
-    private CustomerController customerController = new CustomerController();
-    MyLocalDateRegex myLocalDateRegex;
-
     private static Scanner scanner = new Scanner(System.in);
 
     public boolean idCheck(String id) {
@@ -82,6 +80,7 @@ public class CustomerService extends MyRegex implements ICustomerService {
             System.out.println("Cant find customer with name " + name);
         }
     }
+
     public void getIdAndName() {
         Map<String, String> idAndName = customerRepository.getIdAndName();
         System.out.println("Pick a customer in list down below: ");
