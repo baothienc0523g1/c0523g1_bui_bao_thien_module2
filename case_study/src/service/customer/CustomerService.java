@@ -40,9 +40,13 @@ public class CustomerService extends MyRegex implements ICustomerService {
     @Override
     public void getList() {
         List<Customer> customerList = customerRepository.getList();
-        for (Customer c : customerList) {
-            System.out.println(c);
-            System.out.println("");
+        if (customerList.size() == 0) {
+            System.out.println("Nothing to show");
+        } else {
+            for (Customer c : customerList) {
+                System.out.println(c);
+                System.out.println("");
+            }
         }
     }
 

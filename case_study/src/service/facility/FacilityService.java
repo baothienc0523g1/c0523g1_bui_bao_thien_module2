@@ -20,9 +20,13 @@ public class FacilityService extends MyRegex implements IFacilityService {
     @Override
     public void getList() {
         Map<Facility, Integer> facilities = facilityRepository.getList();
-        for (Map.Entry<Facility, Integer> facility : facilities.entrySet()) {
-            System.out.println(facility.getKey() + ", used: " + facility.getValue() + " times.");
-            System.out.println("");
+        if (facilities.size() == 0) {
+            System.out.println("Nothing to show");
+        } else {
+            for (Map.Entry<Facility, Integer> facility : facilities.entrySet()) {
+                System.out.println(facility.getKey() + ", used: " + facility.getValue() + " times.");
+                System.out.println("");
+            }
         }
     }
 

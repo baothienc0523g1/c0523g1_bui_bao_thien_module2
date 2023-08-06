@@ -40,9 +40,13 @@ public class EmployeeService extends MyRegex implements IEmployeeService {
     @Override
     public void getList() {
         List<Employee> employeeList = employeeRepository.getList();
-        for (Employee e : employeeList) {
-            System.out.println(e);
-            System.out.println("");
+        if (employeeList.size() == 0) {
+            System.out.println("Nothing to show");
+        } else {
+            for (Employee e : employeeList) {
+                System.out.println(e);
+                System.out.println("");
+            }
         }
     }
 

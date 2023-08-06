@@ -24,9 +24,13 @@ public class BookingService extends MyRegex implements IBookingService {
     @Override
     public void getList() {
         List<Booking> bookingList = bookingRepository.getList();
-        for (Booking booking : bookingList) {
-            System.out.println(booking);
-            System.out.println("--------");
+        if (bookingList.size() == 0) {
+            System.out.println("Nothing to show");
+        } else {
+            for (Booking booking : bookingList) {
+                System.out.println(booking);
+                System.out.println("--------");
+            }
         }
     }
 
