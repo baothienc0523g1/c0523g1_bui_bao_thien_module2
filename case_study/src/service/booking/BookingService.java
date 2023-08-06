@@ -6,6 +6,7 @@ import model.business.Contract;
 import repository.booking.BookingRepository;
 import repository.booking.IBookingRepository;
 
+import service.booking.booking_sub.EditContract;
 import service.booking.booking_sub.HouseContract;
 import service.booking.booking_sub.RoomContract;
 import service.booking.booking_sub.VillaContract;
@@ -82,11 +83,13 @@ public class BookingService extends MyRegex implements IBookingService {
         List<Contract> contracts = bookingRepository.getContractList();
         for (Contract contract : contracts) {
             System.out.println(contract);
+            System.out.println("-------");
         }
     }
 
     @Override
     public void editContract() {
-
+        EditContract editContract = new EditContract();
+        editContract.edit();
     }
 }

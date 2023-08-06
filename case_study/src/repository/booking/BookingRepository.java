@@ -24,7 +24,6 @@ public class BookingRepository extends ReadAndWrite implements IBookingRepositor
 
     @Override
     public List<Booking> getList() {
-        Collections.sort(getBookingListFromCSV());
         return getBookingListFromCSV();
     }
 
@@ -53,6 +52,7 @@ public class BookingRepository extends ReadAndWrite implements IBookingRepositor
                     pointer[4], pointer[5]);
             bookingList.add(booking);
         }
+        Collections.sort(bookingList);
         return bookingList;
     }
 
@@ -68,6 +68,29 @@ public class BookingRepository extends ReadAndWrite implements IBookingRepositor
                     , pointer[6], Double.parseDouble(pointer[7]), Double.parseDouble(pointer[8]));
             contractList.add(contract);
         }
+        Collections.sort(contractList);
         return contractList;
+    }
+
+    @Override
+    public void edit(String bookingID, Contract contract) {
+        List<Contract> contractList = getContractList();
+        for (int i = 0; i < contractList.size(); i++) {
+            Contract c = contractList.get(i);
+            if (c.getContractID().equals(bookingID)) {
+                c.setDayBook(contract.getDayBook());
+                c.setCheckInDay(contract.getCheckInDay());
+                c.setCheckOutDay(contract.getCheckOutDay());
+                c.setServiceId(contract.getServiceId());
+                c.setDeposit(contract.getDeposit());
+                c.setTotalCost(contract.getTotalCost());
+                break;
+            }
+        }
+        List<String> contractString = new ArrayList<>();
+        for (Contract c : contractList) {
+            contractString.add(c.toStringForSave());
+        }
+        myWriteToCSV(contractString,CONTRACT_LOCAL_FILE, false);
     }
 }

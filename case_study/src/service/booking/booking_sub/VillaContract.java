@@ -108,21 +108,19 @@ public class VillaContract extends BookingService {
         } while (facilityService.idCheck(serviceId) || !myRegex(serviceId, VILLA_SERVICE_ID));
 
         System.out.println("Deposit");
-        Double deposit;
-        do {
+        Double deposit = null;
+        try {
             deposit = Double.parseDouble(scanner.nextLine());
-            if (!myRegex(String.valueOf(deposit), NUMBER_FORMAT)) {
-                System.out.println("Wrong format of number");
-            }
-        } while (!myRegex(String.valueOf(deposit), NUMBER_FORMAT));
-
-        Double totalCost;
-        do {
-            totalCost =  Double.parseDouble(scanner.nextLine());
-            if (!myRegex(String.valueOf(totalCost), NUMBER_FORMAT)) {
-                System.out.println("Wrong format of number");
-            }
-        } while (!myRegex(String.valueOf(totalCost), NUMBER_FORMAT));
+        } catch (NumberFormatException e) {
+            System.out.println("Wrong format of number");
+        }
+        System.out.println("Total cost");
+        Double totalCost = null;
+        try {
+           totalCost = Double.parseDouble(scanner.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Wrong format of number");
+        }
 
 
         Contract contract = new Contract(dayBook, checkIn, checkOut,

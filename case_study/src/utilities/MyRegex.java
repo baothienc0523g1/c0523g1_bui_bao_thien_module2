@@ -28,7 +28,6 @@ public class MyRegex {
     public static final String FACILITY_SERVICE_NAME = "^[A-Z]\\w.*$";
     public static final String BOOKING_ID = "^B-[0-9]{4}$";
     public static final String CONTRACT_ID = "^C-[0-9]{4}$";
-    public static final String NUMBER_FORMAT = "^[0-9]*$";
 
     /**/
 }

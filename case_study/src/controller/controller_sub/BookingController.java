@@ -29,6 +29,15 @@ public class BookingController {
                     case 2:
                         bookingService.getList();
                         break;
+                    case 3:
+                        bookingService.addNewContract();
+                        break;
+                    case 4:
+                        bookingService.displayContract();
+                        break;
+                    case 5:
+                        bookingService.editContract();
+                        break;
                     case 6:
                         furamaController.display();
                         break;

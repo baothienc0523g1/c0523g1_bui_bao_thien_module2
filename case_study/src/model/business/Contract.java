@@ -3,7 +3,7 @@ package model.business;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Contract implements Serializable {
+public class Contract implements Serializable, Comparable<Contract> {
     private LocalDate dayBook;
     private LocalDate checkInDay;
     private LocalDate checkOutDay;
@@ -25,6 +25,16 @@ public class Contract implements Serializable {
         this.serviceId = serviceId;
         this.contractID = contractID;
         this.bookingID = bookingID;
+        this.deposit = deposit;
+        this.totalCost = totalCost;
+    }
+
+    public Contract(LocalDate dayBook, LocalDate checkInDay, LocalDate checkOutDay,
+                    String serviceId, Double deposit, Double totalCost) {
+        this.dayBook = dayBook;
+        this.checkInDay = checkInDay;
+        this.checkOutDay = checkOutDay;
+        this.serviceId = serviceId;
         this.deposit = deposit;
         this.totalCost = totalCost;
     }
@@ -76,6 +86,46 @@ public class Contract implements Serializable {
         this.totalCost = totalCost;
     }
 
+    public LocalDate getDayBook() {
+        return dayBook;
+    }
+
+    public void setDayBook(LocalDate dayBook) {
+        this.dayBook = dayBook;
+    }
+
+    public LocalDate getCheckInDay() {
+        return checkInDay;
+    }
+
+    public void setCheckInDay(LocalDate checkInDay) {
+        this.checkInDay = checkInDay;
+    }
+
+    public LocalDate getCheckOutDay() {
+        return checkOutDay;
+    }
+
+    public void setCheckOutDay(LocalDate checkOutDay) {
+        this.checkOutDay = checkOutDay;
+    }
+
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
+
+    public String getServiceId() {
+        return serviceId;
+    }
+
+    public void setServiceId(String serviceId) {
+        this.serviceId = serviceId;
+    }
+
     @Override
     public String toString() {
         return "Contract: " + contractID + "\n" +
@@ -87,5 +137,16 @@ public class Contract implements Serializable {
                 "service id: " + serviceId + "\n" +
                 "deposit: $" + deposit + "\n" +
                 "total cost: $" + totalCost;
+    }
+
+    @Override
+    public int compareTo(Contract o) {
+        int cmp = dayBook.getMonth().compareTo(o.getDayBook().getMonth());
+        if (cmp == 0) {
+            cmp = dayBook.getDayOfMonth() - o.getDayBook().getDayOfMonth();
+        } else if (cmp == 0) {
+            cmp = checkOutDay.getDayOfMonth() - o.checkOutDay.getDayOfMonth();
+        }
+        return cmp;
     }
 }

@@ -9,4 +9,5 @@ import java.util.List;
 public interface IBookingRepository extends IRepository<Booking> {
     void createNewContracts(Contract contract);
     List<Contract> getContractList();
+    void edit(String bookingId, Contract contract);
 }

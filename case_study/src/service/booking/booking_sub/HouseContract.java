@@ -93,35 +93,33 @@ public class HouseContract extends BookingService {
         } while (checkOut.isBefore(checkIn) || !myLocalDateRegex.myDateRegex(checkOut));
 
         System.out.println("Service ID");
-
         String serviceId;
         facilityService.getHouseIdList();
         do {
             serviceId = scanner.nextLine();
             if (facilityService.idCheck(serviceId)) {
-                System.out.println("ID not found, put a gain");
+                System.out.println("ID not found, put again");
             }
             if (!myRegex(serviceId, HOUSE_SERVICE_ID)) {
                 System.out.println("Wrong format, ID: SVHO-NNNN, with N is a number");
             }
-        } while (facilityService.idCheck(serviceId) || !myRegex(serviceId, VILLA_SERVICE_ID));
+        } while (facilityService.idCheck(serviceId) || !myRegex(serviceId, HOUSE_SERVICE_ID));
 
         System.out.println("Deposit");
-        Double deposit;
-        do {
+        Double deposit = null;
+        try {
             deposit = Double.parseDouble(scanner.nextLine());
-            if (!myRegex(String.valueOf(deposit), NUMBER_FORMAT)) {
-                System.out.println("Wrong format of number");
-            }
-        } while (!myRegex(String.valueOf(deposit), NUMBER_FORMAT));
+        } catch (NumberFormatException e) {
+            System.out.println("Wrong format of number");
+        }
 
-        Double totalCost;
-        do {
-            totalCost =  Double.parseDouble(scanner.nextLine());
-            if (!myRegex(String.valueOf(totalCost), NUMBER_FORMAT)) {
-                System.out.println("Wrong format of number");
-            }
-        } while (!myRegex(String.valueOf(totalCost), NUMBER_FORMAT));
+        System.out.println("Total cost");
+        Double totalCost = null;
+        try {
+            totalCost = Double.parseDouble(scanner.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Wrong format of number");
+        }
 
 
         Contract contract = new Contract(dayBook, checkIn, checkOut,

@@ -89,13 +89,13 @@ public class RoomContract extends BookingService {
         facilityService.getRoomIdList();
         do {
             serviceId = scanner.nextLine();
-            if (facilityService.idCheck(serviceId)) {
+            if (!facilityService.idCheck(serviceId)) {
                 System.out.println("ID not found, put a gain");
             }
             if (!myRegex(serviceId, ROOM_SERVICE_ID)) {
                 System.out.println("Wrong format, ID: SVRO-NNNN, with N is a number");
             }
-        } while (facilityService.idCheck(serviceId) || !myRegex(serviceId, ROOM_SERVICE_ID));
+        } while (!facilityService.idCheck(serviceId) || !myRegex(serviceId, ROOM_SERVICE_ID));
 
         Booking booking = new Booking(bookingID, dayBook, checkIn,
                 checkOut, customerId, serviceId);
